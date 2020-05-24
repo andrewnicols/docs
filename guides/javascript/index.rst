@@ -5,8 +5,19 @@ Javascript
 
 Moodle makes heavy use of Javascript to improve the experience for its users.
 
-Javascript is structured into Modules, which can be included from Templates or from PHP, and which can fetch and store data via
-:term:`Web Services`.
+All new Javascript in Moodle should be written in the ES2015+ module format.
+It is transpiled into a CommonJS format.
+Modules are loaded in the browser using the RequireJS loader.
+
+All Moodle Javascript can use the same Mustache templates, and translated strings which are available to Moodle PHP code, and the standard Moodle web service framework can be used to fetch and store data.
+
+This guide covers how to get started with Javascript in Moodle, and introduces key concepts and features including module format and structure, including your code, using templates, using translation features, tooling, and handling events.
+
+.. detailblock::
+    :prerequisites:
+    :outcomes:
+    :expectedtime: 20 minutes
+
 
 .. --------------------------------------------------------------------------
    Sam:
@@ -30,11 +41,11 @@ Javascript is structured into Modules, which can be included from Templates or f
 Useful References
 .................
 
-Javascript in Moodle is largely Vanilla Javascript combined with a number of helpers for performing common actions, and
+Moodle uses vanilla Javascript combined with a number of helpers for performing common actions, and
 a small collection of libraries for serving and managing dependencies.
 
-The Javascript documentation available on the Mozilla Developer Network is probably the best reference documentation
-available.
+The Javascript documentation available on the Mozilla Developer Network is one of the best reference documentations
+available. You may find the following references particularly useful:
 
 * `MDN Javascript guide  <https://developer.mozilla.org/en-US/docs/Web/JavaScript>`__.
 * `MDN Javascript Reference <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference>`__.
@@ -44,61 +55,168 @@ available.
 Modules
 .......
 
-We structure our Javascript into ES6 modules which are transpiled into the CommonJS format.
+Javascript in Moodle is structured into ES6 modules which are transpiled into the CommonJS format.
 
-Much like our PHP classes and Mustache templates, our Javascript modules each belong to a particular :term:`component`
+Like our PHP classes and Mustache templates, our Javascript modules each belong to a particular :term:`component`
 and must be named according to our standard :ref:`name and namespace conventions <policy-naming-javascript>`.
 
-.. important::
+The naming scheme for Moodle’s Javascript fits into the pattern:
 
-    Make sure you read the Level 2 Namespace rules.
+``[component_name]/[optional/sub/namespace/][modulename]``
+
+The first directory in any subfolder must be either a Moodle API, or `local`.
+
+The following are examples of valid module names:
+
+.. code-block::
+
+    // For a module named `discussion` in the `mod_forum` component:
+    mod_forum/discussion
+    
+    // For a module named `grader` in the `mod_assign` component, which is part of the `grades` API:
+    mod_assign/grades/grader
+    
+    // For a module named `confirmation` in the `block_newsitems` component, which is a modal and not part of a core API:
+    block_newsitems/local/modal/confirmation
+    
+    // For a module name `selectors` in the `core_user` component, and relates to the `participants` module:
+    core_user/local/participants/selectors
+    
+    
+.. tip::
+
+    When structuring modules, you may find it clearer to create a main module, with a number of related modules.
+    You can create a clear relationship between your modules using subdirectories, for 
+    
+    The `participants` module is a part of `core_user`:
+        
+        ``core_user/participants``
+        
+    To clearly break the code down into reusable chunks we can break out:
+    
+    * all CSS Selectors into a `selectors` module; and
+    * all AJAX requests into a `repository` module.
+    
+        ``core_user/local/participants/selectors``
+        ``core_user/local/participants/repository``
+
 
 Including Javascript from your pages
 ....................................
 
-Now that you know where to place your Javascript content, you need to include it within the page.
+Once you have written a Javascript module, you need a way to include it within your content.
 
-There are three main ways to include your Javascript, and the best way will depend on your content.
+There are three main ways to include your Javascript, and the best way will depend on your content. These are:
+
+* from a template via ``requirejs``;
+* from PHP via the output requirements API; and
+* from other Javascript via ``import`` or ``requirejs``.
 
 
 Including from a template
 -------------------------
 
 Most recent code in Moodle makes heavy use of Mustache templates, and you will usually find that your Javascript is
-responding to user interactions with one of your templates.
+directly linked to the content of one of your templates.
 
-Moodle uses the ``requirejs`` loader to fetch Javascript modules complete with all dependencies, and to initialise it
-within the page:
+All javascript in Mustache templates must be places in a ``{{#js}}`` tag.
+This tag ensures that all Javascript is called in a consistent and reliable way.
+
+Technically any javascript can be placed in these tags however we strongly recommend that you make use of the ``requirejs`` loader to load and initialise your Javascript modules.
+Javascript placed in Templates is not transpiled for consistent use in all browsers, and it is not passed through minification processes.
+
+This simplest form of this is:
 
 .. code-block:: mustache
 
+    <div>
+        <!—- Your template content goes here. —->
+    </div>
+    
     {{#js}}
-    require(['mod_example/mymodule'], function(MyModule) {
-        MyModule.init();
+    require(['mod_forum/discussion'], function(Discussion) {
+        Discussion.init();
     });
     {{/js}}
 
-
-Any time that this template is rendered and placed on the page, the Javascript will be executed.
+Any time that this template is rendered and placed on the page the ``mod_forum/discussion`` module will be fetched, and the ``init()`` function called on it.
 
 .. important::
 
-    It may be possible for a template to be included multiple times.
-    You may need to write your code so that it only loads once, or that it only works with a single DOM Element.
+    Do not use :term:`arrow functions` directly in templates. Internet Explorer does not support arrow functions in any version.
+
+
+Often you may want to link the Javascript to a specific ``DOMElement`` in the template.
+We can easily use the ``{{uniqid}}`` Mustache tag to give that DOM Element a unique ID, and then pass that into the Module.
+
+.. code-block:: mustache
+
+    <div id=“mod_forum-discussion-wrapper-{{uniqid}}”>
+        <!—- Your template content goes here. —->
+    </div>
+    
+    {{#js}}
+    require([‘mod_forum/discussion’], function(Discussion) {
+        Discussion.init(document.querySelector(“mod_forum-discussion-wrapper-{{uniqid}}”));
+    });
+    {{/js}}
+
+In this example we now add a new id to the ``div``.
+We then use the same id to fetch the DOM Element, which is passed into the ``init`` function.
+
+.. note::
+
+    The ``{{uniqid}}`` tag gives a new unique string for each rendered template, including all of its children.
+    It is not a true unique id and must be combined with other information in the template to make it unique.
+
 
 
 Including from PHP
 ------------------
 
-.. TODO::
+Much of Moodle’s code still creates HTML content in PHP directly.
+This may be by echoing HTML tags directly, or using the ``html_writer`` output functions.
+A lot of this content is now being migrated to use Mustache Templates, which is the recommended approach for new content.
 
-    Document how we include Javascript from PHP.
+Where content is generated in PHP, you will need to include your Javascript at the same time.
 
+There are several older ways to include Javascript from PHP, but for all new Javascript we recommend only using the ``js_call_amd`` function on the ``page_requirements_manager``.
+This has a very similar format to the version used in Templates:
 
 .. code-block:: php
 
-    // Call the `init` function on `mod_example/mymodule`.
-    $PAGE->requires->js_call_amd('mod_example/mymodule', 'init');
+    // Call the `init` function on `mod_forum/discussion`.
+    $PAGE->requires->js_call_amd('mod_forum/discussion', 'init');
+
+The ``js_call_amd`` function turns this into a ``requirejs`` call.
+
+You can also pass arguments to your function by passing an array as the third argument to ``js_call_amd``, for example:
+
+.. code-block:: php
+
+    // Call the `init` function on `mod_forum/discussion`.
+    $PAGE->requires->js_call_amd(‘mod_forum/discussion’, ‘init’, [$course->id]);
+
+If you pass a multi-dimensional array as the third argument, then you can use Array destructuring within the Javascript to get named values. 
+
+.. code-block:: php
+
+    $PAGE->requires->js_call_amd(‘mod_forum/discussion’, ‘init’, [[
+        ‘courseid’ => $course->id,
+        ‘categoryid’ => $course->category,
+    ]]);
+    
+.. code-block:: javascript
+
+    export const init = ({courseid, category}) => {
+        window.console.log(courseid);
+        window.console.log(category);
+    };
+
+.. note::
+
+    There is a length limit on the parameters that you can pass as the third argument.
+    We recommend that you only pass information required by the Javascript which is not available in the DOM.
 
 
 Passing data to your Module
