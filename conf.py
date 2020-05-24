@@ -17,6 +17,10 @@
 # sys.path.insert(0, os.path.abspath('.'))
 import sphinx_rtd_theme
 
+import os
+import sys
+
+sys.path.append(os.path.abspath("./_ext"))
 
 # -- Project information -----------------------------------------------------
 
@@ -48,6 +52,7 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.githubpages',
     "sphinx_rtd_theme",
+    "mdl",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
