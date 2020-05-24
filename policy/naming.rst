@@ -10,6 +10,9 @@ Naming conventions
 Components
 ==========
 
+Example link to the tracker:
+See :tracker:`MDLSITE-6096`.
+
 
 .. _policy-naming-javascript:
 
