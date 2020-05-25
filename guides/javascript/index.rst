@@ -338,8 +338,23 @@ Using grunt
 ESLint
 ------
 
-References
-..........
+
+Glossary
+........
+
+.. glossary::
+
+    Arrow functions
+      An arrow function is a shorthand way of writing a regular function.
+      They have a number of small but important differences to regular functions which make them easier to use in most
+      cases, but unsuitable in some others.
+
+      They are not suitable for use in code which is not transpiled as Internet Explorer does not offer any support for
+      them.
+
+      For more information see the `MDN documentation for Arrow function expressions <guides_javascript-mdn-arrow_functions_>`_.
+
+
 ..  ------------------------------------------------------------------------
     Links used on the current page go here.
     All links must be namespaced in the format:
@@ -347,6 +362,8 @@ References
         `guides_javascript-[domain_or_acronym]-[specialty]`
 
     These links should be kept sorted alphabetically
+
 .. _guides_javascript-devhints-es6_cheatsheet: https://devhints.io/es6
+.. _guides_javascript-mdn-arrow_functions: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions
 .. _guides_javascript-mdn-javascript_guide:  https://developer.mozilla.org/en-US/docs/Web/JavaScript>
 .. _guides_javascript-mdn-javascript_reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference>
