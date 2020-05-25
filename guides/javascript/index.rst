@@ -79,20 +79,30 @@ The following are examples of valid module names:
 
 .. tip::
 
-    When structuring modules, you may find it clearer to create a main module, with a number of related modules.
-    You can create a clear relationship between your modules using subdirectories, for 
+    When structuring a new module, you may find it clearer to create a main module, with a number of related modules.
+    You can create a clear relationship between your modules using subdirectories.
 
-    The `participants` module is a part of `core_user`:
+    For example, when creating a new module which controls interactions on the Participants page and which is part of
+    the ``core_user`` component, you will create a ``participants`` module. The full namespace for this module will
+    be ``core_user/participants``.
 
-        ``core_user/participants``
+    The ``core_user/participants`` module may interact with DOM elements which are identified by CSS Selectors.
+    The Moodle convention is to place the selectors in a ``selectors`` module.
 
-    To clearly break the code down into reusable chunks we can break out:
+    The module will also call a set of Web Services.
+    The Moodle convention is to place calls to Web Services in a ``repository`` module.
 
-    * all CSS Selectors into a `selectors` module; and
-    * all AJAX requests into a `repository` module.
+    Since ``participants`` is not a formal API in Moodle, you must create your submodules in the ``local/participants``
+    directory.
 
-        ``core_user/local/participants/selectors``
-        ``core_user/local/participants/repository``
+    .. code-block:: bash
+
+        .
+        ├── local
+        │   └── participants
+        │       ├── repository.js       // core_user/local/participants/selectors
+        │       └── selectors.js        // core_user/local/participants/repository
+        └── participants.js             // core_user/participants
 
 
 Including Javascript from your pages
