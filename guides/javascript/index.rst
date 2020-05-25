@@ -41,9 +41,9 @@ a small collection of libraries for serving and managing dependencies.
 The Javascript documentation available on the Mozilla Developer Network is one of the best reference documentations
 available. You may find the following references particularly useful:
 
-* `MDN Javascript guide  <https://developer.mozilla.org/en-US/docs/Web/JavaScript>`__.
-* `MDN Javascript Reference <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference>`__.
-* `ES2015+ Cheatsheet <https://devhints.io/es6>`__
+* `MDN Javascript guide  <guides_javascript-mdn-javascript_guide_>`_.
+* `MDN Javascript Reference <guides_javascript-mdn-javascript_reference_>`_.
+* `ES2015+ Cheatsheet <guides_javascript-devhints-es6_cheatsheet_>`_
 
 
 Modules
@@ -137,7 +137,7 @@ Any time that this template is rendered and placed on the page the ``mod_forum/d
 
 .. important::
 
-    Do not use :term:`arrow functions` directly in templates. Internet Explorer does not support arrow functions in any version.
+    Do not use :term:`arrow functions<Arrow functions>` directly in templates. Internet Explorer does not support arrow functions in any version.
 
 
 Often you may want to link the Javascript to a specific ``DOMElement`` in the template.
@@ -340,3 +340,13 @@ ESLint
 
 References
 ..........
+..  ------------------------------------------------------------------------
+    Links used on the current page go here.
+    All links must be namespaced in the format:
+
+        `guides_javascript-[domain_or_acronym]-[specialty]`
+
+    These links should be kept sorted alphabetically
+.. _guides_javascript-devhints-es6_cheatsheet: https://devhints.io/es6
+.. _guides_javascript-mdn-javascript_guide:  https://developer.mozilla.org/en-US/docs/Web/JavaScript>
+.. _guides_javascript-mdn-javascript_reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference>
