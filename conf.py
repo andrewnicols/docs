@@ -12,15 +12,14 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
-import sphinx_rtd_theme
-
 import os
 import sys
 
-sys.path.append(os.path.abspath("./_ext"))
+# Add the extensions directory to the path for locally defined extensions.
+sys.path.insert(0, os.path.abspath("./_ext"))
+
+# Import that standard theme.
+import sphinx_rtd_theme
 
 # -- Project information -----------------------------------------------------
 
