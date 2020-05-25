@@ -13,12 +13,6 @@ All Moodle Javascript can use the same Mustache templates, and translated string
 
 This guide covers how to get started with Javascript in Moodle, and introduces key concepts and features including module format and structure, including your code, using templates, using translation features, tooling, and handling events.
 
-.. detailblock::
-    :prerequisites:
-    :outcomes:
-    :expectedtime: 20 minutes
-
-
 .. --------------------------------------------------------------------------
    Sam:
    Probably you already are thinking of doing the new ES6 pattern already. So um, here are some things I can think of that might be useful not in any order... Passing data from PHP in the page (data attributes)... Web service calls... Getting strings... How to do jquery-ish stuff without jquery (document.querySelector etc)... Setting the flags to tell behat the page is busy (and maybe, this in conjunction with animations, which is always a pain)...
