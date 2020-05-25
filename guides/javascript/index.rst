@@ -121,8 +121,9 @@ Writing your first module
 
 The convention in Moodle is to have one Javascript Module which is your
 initial entrypoint.
-This usually provides a function called ``init`` which is ``exported`` from
-the module. This ``init`` function will be called by Moodle.
+This usually provides a function called ``init`` which you then `export
+<guides_javascript-mdn-javascript_reference-export_>`_ from the module.
+This ``init`` function will be called by Moodle.
 
 Your module will probably also have one or more dependencies which you will
 ``import``.
@@ -248,13 +249,19 @@ For example:
 .. code-block:: javascript
    :linenos:
 
-    // mod/example/lib/amd/src/helloworld.js
-    const Selectors = {
+    // mod/example/lib/amd/src/local/helloworld/selectors.js
+    export default {
         actions: {
             showAlertButton: '[data-action="mod_example/helloworld-update_button"],
             bigRedButton: '[data-action="mod_example/helloworld-big_red_button"],
         },
     };
+
+.. code-block:: javascript
+   :linenos:
+
+    // mod/example/lib/amd/src/helloworld.js
+    import Selectors from './local/helloworld/selectors';
 
     const registerEventListeners = () => {
         document.addEventListener('click', e => {
@@ -272,13 +279,18 @@ For example:
         registerEventListeners();
     };
 
-In this example the call to ``document.addEventListener`` has been moved to
-a new ``registerEventListeners`` function. This is another Moodle convention
-which encourages you to structure your code so that each part has clear
-responsibilites.
+You will notice a number of key differences in this example when compared with
+the previous one:
 
-There is only one event listener and it checks if the Element clicked on was
-one that it is interested in.
+* The list of Selectors has been moved to a new Module which is included using
+  the `import <guides_javascript-mdn-javascript_reference-import_>`_ keyword.
+  The new ``selectors`` module is a dependency of the ``helloworld`` module.
+* The call to ``document.addEventListener`` has been moved to a new
+  ``registerEventListeners`` function.
+  This is another Moodle convention which encourages you to structure your
+  code so that each part has clear responsibilites.
+* There is only one event listener and it checks if the Element clicked on was
+  one that it is interested in.
 
 Including Javascript from your pages
 ....................................
@@ -290,7 +302,6 @@ There are three main ways to include your Javascript and the best way will depen
 * from a template via ``requirejs``;
 * from PHP via the output requirements API; and
 * from other Javascript via ``import`` or ``requirejs``.
-
 
 Including from a template
 -------------------------
@@ -577,3 +588,4 @@ Glossary
 .. _guides_javascript-mdn-javascript_reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
 .. _guides_javascript-mdn-javascript_reference-addEventListener: https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
 .. _guides_javascript-mdn-javascript_reference-export: https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export
+.. _guides_javascript-mdn-javascript_reference-import: https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/import
