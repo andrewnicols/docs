@@ -66,31 +66,31 @@ The following are examples of valid module names:
 
     // For a module named `discussion` in the `mod_forum` component:
     mod_forum/discussion
-    
+
     // For a module named `grader` in the `mod_assign` component, which is part of the `grades` API:
     mod_assign/grades/grader
-    
+
     // For a module named `confirmation` in the `block_newsitems` component, which is a modal and not part of a core API:
     block_newsitems/local/modal/confirmation
-    
+
     // For a module name `selectors` in the `core_user` component, and relates to the `participants` module:
     core_user/local/participants/selectors
-    
-    
+
+
 .. tip::
 
     When structuring modules, you may find it clearer to create a main module, with a number of related modules.
     You can create a clear relationship between your modules using subdirectories, for 
-    
+
     The `participants` module is a part of `core_user`:
-        
+
         ``core_user/participants``
-        
+
     To clearly break the code down into reusable chunks we can break out:
-    
+
     * all CSS Selectors into a `selectors` module; and
     * all AJAX requests into a `repository` module.
-    
+
         ``core_user/local/participants/selectors``
         ``core_user/local/participants/repository``
 
@@ -126,7 +126,7 @@ This simplest form of this is:
     <div>
         <!—- Your template content goes here. —->
     </div>
-    
+
     {{#js}}
     require(['mod_forum/discussion'], function(Discussion) {
         Discussion.init();
@@ -148,7 +148,7 @@ We can easily use the ``{{uniqid}}`` Mustache tag to give that DOM Element a uni
     <div id=“mod_forum-discussion-wrapper-{{uniqid}}”>
         <!—- Your template content goes here. —->
     </div>
-    
+
     {{#js}}
     require([‘mod_forum/discussion’], function(Discussion) {
         Discussion.init(document.querySelector(“mod_forum-discussion-wrapper-{{uniqid}}”));
@@ -199,7 +199,7 @@ If you pass a multi-dimensional array as the third argument, then you can use Ar
         ‘courseid’ => $course->id,
         ‘categoryid’ => $course->category,
     ]]);
-    
+
 .. code-block:: javascript
 
     export const init = ({courseid, category}) => {
