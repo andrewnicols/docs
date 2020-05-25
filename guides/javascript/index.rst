@@ -303,12 +303,17 @@ This tag ensures that all Javascript is called in a consistent and reliable way.
 
 .. caution::
 
-    Javascript placed in Templates is not transpiled for consistent use in all browsers and it is not passed through minification processes.
+    You should not add too much Javascript directly to a template.
+    Javascript placed directly into Templates is not transpiled for consistent use in all browsers and it is not passed through minification processes.
+    Some browser-specific features will not be available.
+
 
 This simplest form of this is:
 
 .. code-block:: mustache
+   :linenos:
 
+    {{! mod/forum/templates/discussion.mustache }}
     <div>
         <!—- Your template content goes here. —->
     </div>
