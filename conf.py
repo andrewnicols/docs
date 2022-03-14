@@ -24,13 +24,13 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = u'Moodle'
-copyright = u'2020, Andrew Nicols'
+copyright = u'2022, Andrew Nicols'
 author = u'Andrew Nicols'
 
 # The short X.Y version
-version = u''
+version = u'4.0'
 # The full version, including alpha/beta/rc tags
-release = u'3.9.0'
+release = u'4.0.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -52,6 +52,17 @@ extensions = [
     'sphinx.ext.githubpages',
     "sphinx_rtd_theme",
     "mdl",
+    "myst_parser",
+]
+
+myst_enable_extensions = [
+    "colon_fence",
+    "deflist",
+    "fieldlist",
+    "linkify",
+    "replacements",
+    "smartquotes",
+    "substitution",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -60,8 +71,8 @@ templates_path = ['_templates']
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
-# source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
+source_suffix = ['.rst', '.md']
+#source_suffix = '.rst'
 
 # The master toctree document.
 master_doc = 'index'
@@ -96,7 +107,7 @@ html_theme = "sphinx_rtd_theme"
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = []
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
