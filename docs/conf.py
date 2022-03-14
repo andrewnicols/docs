@@ -24,8 +24,8 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = u'Moodle'
-copyright = u'2022, Andrew Nicols'
-author = u'Andrew Nicols'
+copyright = u'2022, Andrew Lyons'
+author = u'Andrew Lyons'
 
 # The short X.Y version
 version = u'4.0'
@@ -72,7 +72,6 @@ templates_path = ['_templates']
 # You can specify multiple suffix as a list of string:
 #
 source_suffix = ['.rst', '.md']
-#source_suffix = '.rst'
 
 # The master toctree document.
 master_doc = 'index'
@@ -151,7 +150,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'MoodleDeveloperDocumentation.tex', u'Moodle Developer Documentation Documentation',
-     u'Andrew Nicols', 'manual'),
+     u'Andrew Lyons', 'manual'),
 ]
 
 
