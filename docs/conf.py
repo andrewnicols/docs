@@ -196,7 +196,6 @@ myst_title_to_header = True
 myst_number_code_blocks = ["javascript", "js", "mustache", "html", "php"]
 
 # -- Sphinx multiversion configuration --
-smv_tag_whitelist = None # Do not build tags at this time.
 smv_released_pattern = r'^heads/\d+\.\d+$'    # Branches like "3.11".
 smv_branch_whitelist = r'^(master|\d+\.\d+)$' # Branches like 3.11, and master.
 smv_remote_whitelist = r'^(origin)$' # Branches from origin only.
