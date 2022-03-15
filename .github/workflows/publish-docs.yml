@@ -45,6 +45,20 @@ jobs:
 
       - run: sphinx-multiversion docs build/html
 
+      - name: Checkout Moodle
+        uses: actions/checkout@v3
+        with:
+          repository: moodle/moodle
+          path: .moodle
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version-file: '.moodle/.nvmrc'
+
+      - name: Generate docs
+        run: ./scripts/generate_jsdoc.sh
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/master' }}
