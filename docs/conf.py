@@ -28,10 +28,10 @@ copyright = u'2022, Andrew Lyons'
 author = u'Andrew Lyons'
 
 # The short X.Y version
-version = u'4.0'
+version = u'3.11'
 
 # The full version, including alpha/beta/rc tags
-release = u'4.0.0'
+release = u'3.11.0'
 
 
 # -- General configuration ---------------------------------------------------
