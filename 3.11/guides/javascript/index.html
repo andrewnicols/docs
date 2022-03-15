@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Javascript &mdash; Moodle 4.0.0 documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Naming conventions" href="../../policy/naming.html" />
+    <link rel="prev" title="Moodle 4.0 Developer documentation" href="../../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../../index.html" class="icon icon-home"> Moodle
+          </a>
+              <div class="version">
+                4.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Developer guides</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Javascript</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#useful-references">Useful References</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modules">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#writing-your-first-module">Writing your first module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#listen-to-a-dom-event">Listen to a DOM Event</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#including-javascript-from-your-pages">Including Javascript from your pages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#including-from-a-template">Including from a template</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#including-from-php">Including from PHP</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#passing-data-to-your-module">Passing data to your Module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#using-data-attributes">Using data attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#promises">Promises</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#working-with-strings">Working with Strings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example">Example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#templates">Templates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modals">Modals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#notifications">Notifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ajax-calls">AJAX Calls</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#preferences">Preferences</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prefetch">Prefetch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools">Tools</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#grunt">Grunt</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#installing-grunt">Installing grunt</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#using-grunt">Using grunt</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#eslint">ESLint</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#glossary">Glossary</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Policies and conventions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../policy/naming.html">Naming conventions</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Development tools</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tools/nodejs.html">NodeJS</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Useful information</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../glossary.html">Glossary</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Moodle</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Javascript</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/guides/javascript/index.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="javascript">
+<h1>Javascript<a class="headerlink" href="#javascript" title="Permalink to this headline"></a></h1>
+<p>Moodle makes heavy use of Javascript to improve the experience for its users.</p>
+<p>All new Javascript in Moodle should be written in the ES2015+ module format,
+which is transpiled into the CommonJS format.
+Modules are loaded in the browser using the RequireJS loader.</p>
+<p>All Moodle Javascript can use the same Mustache templates and translated strings which are available to Moodle PHP code, and the standard Moodle web service framework can be used to fetch and store data.</p>
+<p>This guide covers how to get started with Javascript in Moodle, and introduces key concepts and features including module format and structure, including your code, using templates, using translation features, tooling, and handling events.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You may see the terms <code class="docutils literal notranslate"><span class="pre">ES6</span></code> and <code class="docutils literal notranslate"><span class="pre">ES2015</span></code> used interchangably.
+ES2015 is the 6th generation of the Ecma Script specification.
+ES2015 respresents a big change from previous versions of the Ecma Script
+specification.</p>
+</div>
+<section id="useful-references">
+<h2>Useful References<a class="headerlink" href="#useful-references" title="Permalink to this headline"></a></h2>
+<p>Moodle uses vanilla Javascript combined with a number of helpers for performing common actions, and
+a small collection of libraries for serving and managing dependencies.</p>
+<p>The Javascript documentation available on the Mozilla Developer Network is one of the best reference documentations
+available. You may find the following references particularly useful:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN Javascript guide</a>.</p></li>
+<li><p><a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference">MDN Javascript Reference</a>.</p></li>
+<li><p><a class="reference external" href="https://devhints.io/es6">ES2015+ Cheatsheet</a></p></li>
+</ul>
+</section>
+<section id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Permalink to this headline"></a></h2>
+<p>Javascript in Moodle is structured into ES2015 modules which are transpiled into the CommonJS format.</p>
+<p>Like our PHP classes and Mustache templates, our Javascript modules each belong to a particular <a class="reference internal" href="../../glossary.html#term-component"><span class="xref std std-term">component</span></a>
+and must be named according to our standard <a class="reference internal" href="../../policy/naming.html#policy-naming-javascript"><span class="std std-ref">name and namespace conventions</span></a>.</p>
+<p>The naming scheme for Moodle’s Javascript fits into the pattern:</p>
+<p><code class="docutils literal notranslate"><span class="pre">[component_name]/[optional/sub/namespace/][modulename]</span></code></p>
+<p>The first directory in any subfolder must be either a Moodle API, or <code class="docutils literal notranslate"><span class="pre">local</span></code>.</p>
+<p>The following are examples of valid module names:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>// For a module named `discussion` in the `mod_forum` component:
+mod_forum/discussion
+
+// For a module named `grader` in the `mod_assign` component which is
+// part of the `grades` API:
+mod_assign/grades/grader
+
+// For a module named `confirmation` in the `block_newsitems` component
+// which is a modal and not part of a core API:
+block_newsitems/local/modal/confirmation
+
+// For a module name `selectors` in the `core_user` component and relates
+// to the `participants` module:
+core_user/local/participants/selectors
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>When structuring a new module you may find it clearer to create a main module with a number of related modules.
+You can create a clear relationship between your modules using subdirectories.</p>
+<p>For example when creating a new module which controls interactions on the Participants page and which is part of
+the <code class="docutils literal notranslate"><span class="pre">core_user</span></code> component you will create a <code class="docutils literal notranslate"><span class="pre">participants</span></code> module.
+The full namespace for this module will be <code class="docutils literal notranslate"><span class="pre">core_user/participants</span></code>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">core_user/participants</span></code> module may interact with DOM elements which are identified by CSS Selectors.
+The Moodle convention is to place the selectors in a <code class="docutils literal notranslate"><span class="pre">selectors</span></code> module.</p>
+<p>The module will also call a set of Web Services.
+The Moodle convention is to place calls to Web Services in a <code class="docutils literal notranslate"><span class="pre">repository</span></code> module.</p>
+<p>Since <code class="docutils literal notranslate"><span class="pre">participants</span></code> is not a formal API in Moodle you must create your submodules in the <code class="docutils literal notranslate"><span class="pre">local/participants</span></code>
+directory.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">.</span>
+<span class="go">├── local</span>
+<span class="go">│   └── participants</span>
+<span class="go">│       ├── repository.js       // core_user/local/participants/selectors</span>
+<span class="go">│       └── selectors.js        // core_user/local/participants/repository</span>
+<span class="go">└── participants.js             // core_user/participants</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="writing-your-first-module">
+<h2>Writing your first module<a class="headerlink" href="#writing-your-first-module" title="Permalink to this headline"></a></h2>
+<p>The convention in Moodle is to have one Javascript Module which is your initial entrypoint.
+This usually provides a function called <code class="docutils literal notranslate"><span class="pre">init</span></code> which you then <a class="reference external" href="https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export">export</a> from the module.
+This <code class="docutils literal notranslate"><span class="pre">init</span></code> function will be called by Moodle.</p>
+<p>Your module will probably also have one or more dependencies which you will <code class="docutils literal notranslate"><span class="pre">import</span></code>.</p>
+<p>As you start to build out the structure of your code you will start to export more functions, as well as Objects,
+Classes, and other data structures.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This guide is not intended to teach you how to write Javascript.
+If you are new to Javascript, you may want to start with the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web">MDN Javascript
+basics guide</a>.</p>
+</div>
+<p>A module which calls to the browser <code class="docutils literal notranslate"><span class="pre">console.log</span></code> function would look like:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span> <span class="c1">// mod/example/lib/amd/src/helloworld.js</span>
+<span class="linenos">2</span> <span class="k">export</span> <span class="kd">const</span> <span class="nx">init</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos">3</span>     <span class="nb">window</span><span class="p">.</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Hello, world!&#39;</span><span class="p">);</span>
+<span class="linenos">4</span> <span class="p">};</span>
+</pre></div>
+</div>
+<p>In this example a new variable called <code class="docutils literal notranslate"><span class="pre">init</span></code> is created and exported using
+the ES2015 <a class="reference external" href="https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/export">export</a> keyword.
+The variable is assigned an arrow function expression which takes no
+arguments, and when executed will call the browser <code class="docutils literal notranslate"><span class="pre">console.log</span></code> function
+with the text <code class="docutils literal notranslate"><span class="pre">&quot;Hello,</span> <span class="pre">world!&quot;</span></code>.</p>
+<section id="listen-to-a-dom-event">
+<h3>Listen to a DOM Event<a class="headerlink" href="#listen-to-a-dom-event" title="Permalink to this headline"></a></h3>
+<p>In most cases you will want to perform an action in response to a user
+interacting with the page.</p>
+<p>You can use the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener">document.addEventListener()</a> method to do
+this.</p>
+<p>To add a <code class="docutils literal notranslate"><span class="pre">click</span></code> listener to the entire body you would write:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span> <span class="c1">// mod/example/lib/amd/src/helloworld.js</span>
+<span class="linenos">2</span> <span class="k">export</span> <span class="kd">const</span> <span class="nx">init</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos">3</span>     <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">e</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos">4</span>         <span class="nb">window</span><span class="p">.</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">);</span>
+<span class="linenos">5</span>     <span class="p">});</span>
+<span class="linenos">6</span> <span class="p">};</span>
+</pre></div>
+</div>
+<p>In this example any time that a user clicks anywhere on the document the item
+that was clicked on will be logged to the browser console.</p>
+<p>Usually you won’t want to listen for every click in the document but only for
+some of the Elements in the page.</p>
+<p>If you wanted to display a browser alert every time a user clicks on a buttn,
+you might have a template like the following example:</p>
+<div class="highlight-mustache notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span> {{! mod/example/templates/helloworld.mustache }}
+<span class="linenos">2</span> &lt;button data-action=&quot;mod_example/helloworld-update_button&quot;&gt;Click me&lt;/button&gt;
+</pre></div>
+</div>
+<p>You can write a listener which only looks for clicks to this button:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span> <span class="c1">// mod/example/lib/amd/src/helloworld.js</span>
+<span class="linenos"> 2</span> <span class="kd">const</span> <span class="nx">Selectors</span> <span class="o">=</span> <span class="p">{</span>
+<span class="linenos"> 3</span>     <span class="nx">actions</span><span class="o">:</span> <span class="p">{</span>
+<span class="linenos"> 4</span>         <span class="nx">showAlertButton</span><span class="o">:</span> <span class="s1">&#39;[data-action=&quot;mod_example/helloworld-update_button&quot;]&#39;</span><span class="p">,</span>
+<span class="linenos"> 5</span>     <span class="p">},</span>
+<span class="linenos"> 6</span> <span class="p">};</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span> <span class="k">export</span> <span class="kd">const</span> <span class="nx">init</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos"> 9</span>     <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">e</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos">10</span>         <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="nx">Selectors</span><span class="p">.</span><span class="nx">actions</span><span class="p">.</span><span class="nx">showAlertButton</span><span class="p">))</span> <span class="p">{</span>
+<span class="linenos">11</span>             <span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Thank you for clicking on the button&quot;</span><span class="p">);</span>
+<span class="linenos">12</span>         <span class="p">}</span>
+<span class="linenos">13</span>     <span class="p">});</span>
+<span class="linenos">14</span> <span class="p">};</span>
+</pre></div>
+</div>
+<p>This example shows several conventions that are used in Moodle:</p>
+<ul class="simple">
+<li><p>CSS Selectors are often stored separately to the code in a <code class="docutils literal notranslate"><span class="pre">Selectors</span></code>
+object. This allows you to easily re-use a Selector and to group them
+together in different ways. It also places all selectors in one place so
+that you can update them more easily.</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">Selectors</span></code> object is stored in a <code class="docutils literal notranslate"><span class="pre">const</span></code> variable which is _not_
+exported. This means that it is private and only available within your
+module.</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">data-*</span></code> attribute is used to identify the button in the Javascript
+module.
+Moodle advises not to use class selectors when attaching event listeners because
+so that it is easier to restyle for different themes without any changes to
+the Javascript later.</p></li>
+<li><p>A namespace is used for the <code class="docutils literal notranslate"><span class="pre">data-action</span></code> to clearly identify what the
+button is intended for.</p></li>
+<li><p>By using <code class="docutils literal notranslate"><span class="pre">e.target.closest()</span></code> you can check whether the element that was
+clicked on, or any of its parent elements matches the supplied CSS Selector.</p></li>
+</ul>
+<p>Instead of having one event listener for every button in your page, you can
+have one event listener which checks which button was pressed.
+If you have a template like the following:</p>
+<div class="highlight-mustache notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span> {{! mod/example/templates/helloworld.mustache }}
+<span class="linenos">2</span> &lt;div&gt;
+<span class="linenos">3</span>     &lt;button data-action=&quot;mod_example/helloworld-update_button&quot;&gt;Click me&lt;/button&gt;
+<span class="linenos">4</span>     &lt;button data-action=&quot;mod_example/helloworld-big_red_button&quot;&gt;Do not click me&lt;/button&gt;
+<span class="linenos">5</span> &lt;/div&gt;
+</pre></div>
+</div>
+<p>Then you can write one event listener which looks at all buttons on the page.
+For example:</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span> <span class="c1">// mod/example/lib/amd/src/local/helloworld/selectors.js</span>
+<span class="linenos">2</span> <span class="k">export</span> <span class="k">default</span> <span class="p">{</span>
+<span class="linenos">3</span>     <span class="nx">actions</span><span class="o">:</span> <span class="p">{</span>
+<span class="linenos">4</span>         <span class="nx">showAlertButton</span><span class="o">:</span> <span class="s1">&#39;[data-action=&quot;mod_example/helloworld-update_button&quot;],</span>
+<span class="linenos">5</span><span class="s1">         bigRedButton: &#39;</span><span class="p">[</span><span class="nx">data</span><span class="o">-</span><span class="nx">action</span><span class="o">=</span><span class="s2">&quot;mod_example/helloworld-big_red_button&quot;</span><span class="p">],</span>
+<span class="linenos">6</span>     <span class="p">},</span>
+<span class="linenos">7</span> <span class="p">};</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span> <span class="c1">// mod/example/lib/amd/src/helloworld.js</span>
+<span class="linenos"> 2</span> <span class="k">import</span> <span class="nx">Selectors</span> <span class="kr">from</span> <span class="s1">&#39;./local/helloworld/selectors&#39;</span><span class="p">;</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span> <span class="kd">const</span> <span class="nx">registerEventListeners</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos"> 5</span>     <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">e</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos"> 6</span>         <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="nx">Selectors</span><span class="p">.</span><span class="nx">actions</span><span class="p">.</span><span class="nx">showAlertButton</span><span class="p">))</span> <span class="p">{</span>
+<span class="linenos"> 7</span>             <span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;Thank you for clicking on the button&quot;</span><span class="p">);</span>
+<span class="linenos"> 8</span>         <span class="p">}</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span>         <span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="nx">Selectors</span><span class="p">.</span><span class="nx">actions</span><span class="p">.</span><span class="nx">bigRedButton</span><span class="p">))</span> <span class="p">{</span>
+<span class="linenos">11</span>             <span class="nb">window</span><span class="p">.</span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;You shouldn&#39;t have clicked on that one!&quot;</span><span class="p">);</span>
+<span class="linenos">12</span>         <span class="p">}</span>
+<span class="linenos">13</span>     <span class="p">});</span>
+<span class="linenos">14</span> <span class="p">};</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span> <span class="k">export</span> <span class="kd">const</span> <span class="nx">init</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos">17</span>     <span class="nx">registerEventListeners</span><span class="p">();</span>
+<span class="linenos">18</span> <span class="p">};</span>
+</pre></div>
+</div>
+<p>You will notice a number of key differences in this example when compared with
+the previous one:</p>
+<ul class="simple">
+<li><p>The list of Selectors has been moved to a new Module which is included using
+the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/web/javascript/reference/statements/import">import</a> keyword.
+The new <code class="docutils literal notranslate"><span class="pre">selectors</span></code> module is a dependency of the <code class="docutils literal notranslate"><span class="pre">helloworld</span></code> module.</p></li>
+<li><p>The call to <code class="docutils literal notranslate"><span class="pre">document.addEventListener</span></code> has been moved to a new
+<code class="docutils literal notranslate"><span class="pre">registerEventListeners</span></code> function.
+This is another Moodle convention which encourages you to structure your
+code so that each part has clear responsibilites.</p></li>
+<li><p>There is only one event listener and it checks if the Element clicked on was
+one that it is interested in.</p></li>
+</ul>
+</section>
+</section>
+<section id="including-javascript-from-your-pages">
+<h2>Including Javascript from your pages<a class="headerlink" href="#including-javascript-from-your-pages" title="Permalink to this headline"></a></h2>
+<p>Once you have written a Javascript module you need a way to include it within your content.</p>
+<p>There are three main ways to include your Javascript and the best way will depend on your content. These are:</p>
+<ul class="simple">
+<li><p>from a template via <code class="docutils literal notranslate"><span class="pre">requirejs</span></code>;</p></li>
+<li><p>from PHP via the output requirements API; and</p></li>
+<li><p>from other Javascript via <code class="docutils literal notranslate"><span class="pre">import</span></code> or <code class="docutils literal notranslate"><span class="pre">requirejs</span></code>.</p></li>
+</ul>
+<section id="including-from-a-template">
+<h3>Including from a template<a class="headerlink" href="#including-from-a-template" title="Permalink to this headline"></a></h3>
+<p>Most recent code in Moodle makes heavy use of Mustache templates and you will usually find that your Javascript is
+directly linked to the content of one of your templates.</p>
+<p>All javascript in Mustache templates must be places in a <code class="docutils literal notranslate"><span class="pre">{{#js}}</span></code> tag.
+This tag ensures that all Javascript is called in a consistent and reliable way.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>You should not add too much Javascript directly to a template.
+Javascript placed directly into Templates is not transpiled for consistent use in all browsers and it is not passed through minification processes.
+Some browser-specific features will not be available.</p>
+</div>
+<p>This simplest form of this is:</p>
+<div class="highlight-mustache notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span> {{! mod/forum/templates/discussion.mustache }}
+<span class="linenos"> 2</span> &lt;div&gt;
+<span class="linenos"> 3</span>     &lt;!—- Your template content goes here. —-&gt;
+<span class="linenos"> 4</span> &lt;/div&gt;
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span> {{#js}}
+<span class="linenos"> 7</span> require([&#39;mod_forum/discussion&#39;], function(Discussion) {
+<span class="linenos"> 8</span>     Discussion.init();
+<span class="linenos"> 9</span> });
+<span class="linenos">10</span> {{/js}}
+</pre></div>
+</div>
+<p>Any time that this template is rendered and placed on the page the <code class="docutils literal notranslate"><span class="pre">mod_forum/discussion</span></code> module will be fetched and the <code class="docutils literal notranslate"><span class="pre">init()</span></code> function called on it.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Do not use <a class="reference internal" href="#term-Arrow-functions"><span class="xref std std-term">arrow functions</span></a> directly in templates. Internet Explorer does not support arrow functions in any version.</p>
+</div>
+<p>Often you may want to link the Javascript to a specific <code class="docutils literal notranslate"><span class="pre">DOMElement</span></code> in the template.
+You can easily use the <code class="docutils literal notranslate"><span class="pre">{{uniqid}}</span></code> Mustache tag to give that DOM Element a unique ID and then pass that into the Module.</p>
+<div class="highlight-mustache notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>&lt;div id=“mod_forum-discussion-wrapper-{{uniqid}}”&gt;
+<span class="linenos">2</span>    &lt;!—- Your template content goes here. —-&gt;
+<span class="linenos">3</span>&lt;/div&gt;
+<span class="linenos">4</span>
+<span class="linenos">5</span>{{#js}}
+<span class="linenos">6</span>require([‘mod_forum/discussion’], function(Discussion) {
+<span class="linenos">7</span>    Discussion.init(document.querySelector(“mod_forum-discussion-wrapper-{{uniqid}}”));
+<span class="linenos">8</span>});
+<span class="linenos">9</span>{{/js}}
+</pre></div>
+</div>
+<p>In this example you have added a new <code class="docutils literal notranslate"><span class="pre">id</span></code> to the <code class="docutils literal notranslate"><span class="pre">div</span></code> element.
+You then fetch the DOM Element using this id and pass it into the <code class="docutils literal notranslate"><span class="pre">init</span></code> function.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">{{uniqid}}</span></code> tag gives a new unique string for each rendered template including all of its children.
+It is not a true unique id and must be combined with other information in the template to make it unique.</p>
+</div>
+</section>
+<section id="including-from-php">
+<h3>Including from PHP<a class="headerlink" href="#including-from-php" title="Permalink to this headline"></a></h3>
+<p>Much of Moodle’s code still creates HTML content in PHP directly.
+This might be a simple <code class="docutils literal notranslate"><span class="pre">echo</span></code> statement or using the <code class="docutils literal notranslate"><span class="pre">html_writer</span></code> output functions.
+A lot of this content is being migrated to use Mustache Templates which are the recommended approach for new content.</p>
+<p>Where content is generated in PHP you will need to include your Javascript at the same time.</p>
+<p>There are several older ways to include Javascript from PHP, but for all new Javascript we recommend only using the <code class="docutils literal notranslate"><span class="pre">js_call_amd</span></code> function on the <code class="docutils literal notranslate"><span class="pre">page_requirements_manager</span></code>.
+This has a very similar format to the version used in Templates:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="x">// Call the `init` function on `mod_forum/discussion`.</span>
+<span class="linenos">2</span><span class="x">$PAGE-&gt;requires-&gt;js_call_amd(&#39;mod_forum/discussion&#39;, &#39;init&#39;);</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">js_call_amd</span></code> function turns this into a <code class="docutils literal notranslate"><span class="pre">requirejs</span></code> call.</p>
+<p>You can also pass arguments to your function by passing an array as the third argument to <code class="docutils literal notranslate"><span class="pre">js_call_amd</span></code>, for example:</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="x">// Call the `init` function on `mod_forum/discussion`.</span>
+<span class="linenos">2</span><span class="x">$PAGE-&gt;requires-&gt;js_call_amd(‘mod_forum/discussion’, ‘init’, [$course-&gt;id]);</span>
+</pre></div>
+</div>
+<p>If you pass a multi-dimensional array as the third argument, then you can use Array destructuring within the Javascript to get named values.</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="x">$PAGE-&gt;requires-&gt;js_call_amd(‘mod_forum/discussion’, ‘init’, [[</span>
+<span class="linenos">2</span><span class="x">    ‘courseid’ =&gt; $course-&gt;id,</span>
+<span class="linenos">3</span><span class="x">    ‘categoryid’ =&gt; $course-&gt;category,</span>
+<span class="linenos">4</span><span class="x">]]);</span>
+</pre></div>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">export</span> <span class="kd">const</span> <span class="nx">init</span> <span class="o">=</span> <span class="p">({</span><span class="nx">courseid</span><span class="p">,</span> <span class="nx">category</span><span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos">2</span>    <span class="nb">window</span><span class="p">.</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">courseid</span><span class="p">);</span>
+<span class="linenos">3</span>    <span class="nb">window</span><span class="p">.</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">category</span><span class="p">);</span>
+<span class="linenos">4</span><span class="p">};</span>
+</pre></div>
+</div>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>There is a limit to the length of the parameters passed in the third argument.
+You should only pass information required by the Javascript which is not alrady available in the DOM.</p>
+</div>
+</section>
+</section>
+<section id="passing-data-to-your-module">
+<h2>Passing data to your Module<a class="headerlink" href="#passing-data-to-your-module" title="Permalink to this headline"></a></h2>
+<p>You will often need to work with data as part of your Javascript module.
+This might be simple data, like the a database id, or it may be more complex
+like full Objects.</p>
+<p>In most cases you will be able to store this data in the DOM as a data
+attribute which you can fetch with your Javascript.
+In some cases you will need to use Moodle Web Services to fetch this data
+instead.
+A small amount of data can be passed into the initialisation of your
+Javascript module, but this is no longer recommended.</p>
+<section id="using-data-attributes">
+<h3>Using data attributes<a class="headerlink" href="#using-data-attributes" title="Permalink to this headline"></a></h3>
+<p>The easiest way to pass data is to use data attributes.</p>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Document the main ways that we pass data.</p>
+<p>Focus on:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>data- attributes in HTML being ready</p></li>
+<li><p>the limitations of the data passed into <cite>js_call_amd</cite></p></li>
+<li><p>web services</p></li>
+</ul>
+</div></blockquote>
+</div>
+</section>
+</section>
+<section id="promises">
+<h2>Promises<a class="headerlink" href="#promises" title="Permalink to this headline"></a></h2>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>We should document things like:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">then</span></code> and <code class="docutils literal notranslate"><span class="pre">catch</span></code> consistently (thennables)</p></li>
+<li><p>Don’t use <code class="docutils literal notranslate"><span class="pre">catch</span></code> if you are returning a Promise just by habit - only use it if you mean to</p></li>
+<li><p>You _must_ return at the end of a thennable</p></li>
+<li><p>It’s generally a good idea to return a Promise from a fucntion if the function is primarily tasked with
+creating that Promise</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>You should not use the <code class="docutils literal notranslate"><span class="pre">done</span></code>, <code class="docutils literal notranslate"><span class="pre">fail</span></code>, or <code class="docutils literal notranslate"><span class="pre">always</span></code> functions on Promises.
+These are a jQuery feature which is not present in the Native Promise implementation.</p>
+</div>
+<section id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline"></a></h3>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kd">const</span> <span class="nx">getModal</span> <span class="o">=</span> <span class="nx">questionBody</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos"> 2</span>    <span class="k">return</span> <span class="nx">ModalFactory</span><span class="p">.</span><span class="nx">create</span><span class="p">({</span>
+<span class="linenos"> 3</span>        <span class="nx">title</span><span class="o">:</span> <span class="nx">getString</span><span class="p">(</span><span class="s1">&#39;mytitle&#39;</span><span class="p">,</span> <span class="s1">&#39;mod_example&#39;</span><span class="p">),</span>
+<span class="linenos"> 4</span>        <span class="nx">body</span><span class="o">:</span> <span class="nx">renderTemplate</span><span class="p">(</span><span class="s1">&#39;mod_example/example_body&#39;</span><span class="p">,</span> <span class="nx">questionBody</span><span class="p">),</span>
+<span class="linenos"> 5</span>        <span class="nx">removeOnClose</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="linenos"> 6</span>    <span class="p">})</span>
+<span class="linenos"> 7</span>    <span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">modal</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos"> 8</span>        <span class="nx">modal</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span>        <span class="k">return</span> <span class="nx">modal</span><span class="p">;</span>
+<span class="linenos">11</span>    <span class="p">});</span>
+<span class="linenos">12</span><span class="p">};</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="working-with-strings">
+<h2>Working with Strings<a class="headerlink" href="#working-with-strings" title="Permalink to this headline"></a></h2>
+<p>One of the most helpful core modules is <code class="docutils literal notranslate"><span class="pre">core/str</span></code> which allows you to easily fetch and render language Strings in
+Javascript.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">core/str</span></code> module has two main functions, which both return Promises containing the resolved string.</p>
+<p>Strings are fetched on request from Moodle, and are then cached in LocalStorage.</p>
+</section>
+<section id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline"></a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">import</span> <span class="p">{</span><span class="nx">get_string</span> <span class="kr">as</span> <span class="nx">getString</span><span class="p">}</span> <span class="kr">from</span> <span class="s1">&#39;core/str&#39;</span><span class="p">;</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nx">getString</span><span class="p">(</span><span class="s1">&#39;close&#39;</span><span class="p">,</span> <span class="s1">&#39;core&#39;</span><span class="p">)</span>
+<span class="linenos">4</span><span class="p">.</span><span class="nx">then</span><span class="p">(</span><span class="nx">closeString</span> <span class="p">=&gt;</span> <span class="p">{</span>
+<span class="linenos">5</span>    <span class="nb">window</span><span class="p">.</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">closeString</span><span class="p">);</span>
+<span class="linenos">6</span>
+<span class="linenos">7</span>    <span class="k">return</span> <span class="nx">closeString</span><span class="p">;</span>
+<span class="linenos">8</span><span class="p">})</span>
+<span class="linenos">9</span><span class="p">.</span><span class="k">catch</span><span class="p">();</span>
+</pre></div>
+</div>
+</section>
+<section id="templates">
+<h2>Templates<a class="headerlink" href="#templates" title="Permalink to this headline"></a></h2>
+</section>
+<section id="modals">
+<h2>Modals<a class="headerlink" href="#modals" title="Permalink to this headline"></a></h2>
+</section>
+<section id="notifications">
+<h2>Notifications<a class="headerlink" href="#notifications" title="Permalink to this headline"></a></h2>
+</section>
+<section id="ajax-calls">
+<h2>AJAX Calls<a class="headerlink" href="#ajax-calls" title="Permalink to this headline"></a></h2>
+</section>
+<section id="preferences">
+<h2>Preferences<a class="headerlink" href="#preferences" title="Permalink to this headline"></a></h2>
+</section>
+<section id="prefetch">
+<h2>Prefetch<a class="headerlink" href="#prefetch" title="Permalink to this headline"></a></h2>
+</section>
+<section id="tools">
+<h2>Tools<a class="headerlink" href="#tools" title="Permalink to this headline"></a></h2>
+<p>We make use of a number of common and popular tools to ensure the quality of our code, and to improve the end-user
+experience.</p>
+<p>Most of our Javascript tooling requires <a class="reference internal" href="../../tools/nodejs.html#tools-nodejs"><span class="std std-ref">NodeJS</span></a>.</p>
+<section id="grunt">
+<h3>Grunt<a class="headerlink" href="#grunt" title="Permalink to this headline"></a></h3>
+<p><a class="reference external" href="https://gruntjs.com/">Grunt</a> is a command-line tool used to compile Javascript, and CSS, and to validate and lint Javascript, CSS, Behat tests,
+and more.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Rather than running <code class="docutils literal notranslate"><span class="pre">grunt</span></code> on the entire Moodle source every time you make changes, you can use <code class="docutils literal notranslate"><span class="pre">grunt</span> <span class="pre">watch</span></code>
+in the background to build just the files you change as you write them.</p>
+</div>
+<section id="installing-grunt">
+<h4>Installing grunt<a class="headerlink" href="#installing-grunt" title="Permalink to this headline"></a></h4>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="gp">$ </span>npm -g install grunt-cli
+</pre></div>
+</div>
+</section>
+<section id="using-grunt">
+<h4>Using grunt<a class="headerlink" href="#using-grunt" title="Permalink to this headline"></a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>grunt
+</pre></div>
+</div>
+</section>
+</section>
+<section id="eslint">
+<h3>ESLint<a class="headerlink" href="#eslint" title="Permalink to this headline"></a></h3>
+</section>
+</section>
+<section id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline"></a></h2>
+<dl class="glossary">
+<dt id="term-Arrow-functions">Arrow functions<a class="headerlink" href="#term-Arrow-functions" title="Permalink to this term"></a></dt><dd><p>An arrow function is a shorthand way of writing a regular function.
+They have a number of small but important differences to regular functions which make them easier to use in most
+cases, but unsuitable in some others.</p>
+<p>They are not suitable for use in code which is not transpiled as Internet Explorer does not offer any support for
+them.</p>
+<p>For more information see the <a class="reference external" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">MDN documentation for Arrow function expressions</a>.</p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../index.html" class="btn btn-neutral float-left" title="Moodle 4.0 Developer documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../policy/naming.html" class="btn btn-neutral float-right" title="Naming conventions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Andrew Lyons.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+<div class="rst-versions" data-toggle="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    <span class="fa fa-book"> Developer Documentation</span>
+    v: 3.11
+    <span class="fa fa-caret-down"></span>
+  </span>
+  <div class="rst-other-versions">
+    <dl>
+      <dt>Versions</dt>
+      
+        <dd><a href="../../../master/guides/javascript/index.html">master</a></dd>
+      
+        <dd><a href="index.html">3.11</a></dd>
+      
+    </dl>
+  </div>
+</div>
+<script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
