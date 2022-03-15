@@ -1,4 +1,6 @@
-# Glossary
+---
+title: Glossary
+---
 
 :::{glossary}
 component

@@ -29,6 +29,7 @@ author = u'Andrew Lyons'
 
 # The short X.Y version
 version = u'4.0'
+
 # The full version, including alpha/beta/rc tags
 release = u'4.0.0'
 
@@ -89,7 +90,7 @@ language = None
 exclude_patterns = [u'_build', 'Thumbs.db', '.DS_Store']
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+pygments_style = 'fruity'
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -187,3 +188,13 @@ intersphinx_mapping = {'https://docs.python.org/': None}
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
+
+# -- Options for MyST Auto-generated header anchors extension --
+# https://myst-parser.readthedocs.io/en/latest/syntax/optional.html#syntax-header-anchors
+myst_heading_anchors = 3
+
+# -- Options for MyST Title to Header configuration --
+myst_title_to_header = True
+
+# -- Options for MyST Number code blocks --
+myst_number_code_blocks = ["javascript", "js", "mustache", "html", "php"]

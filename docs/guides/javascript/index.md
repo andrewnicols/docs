@@ -1,6 +1,7 @@
-(guides-javascript)=
+---
+title: Javascript
+---
 
-# Javascript
 
 Moodle makes heavy use of Javascript to improve the experience for its users.
 
@@ -54,7 +55,7 @@ available. You may find the following references particularly useful:
 Javascript in Moodle is structured into ES2015 modules which are transpiled into the CommonJS format.
 
 Like our PHP classes and Mustache templates, our Javascript modules each belong to a particular {term}`component`
-and must be named according to our standard {ref}`name and namespace conventions <policy-naming-javascript>`.
+and must be named according to our standard [name and namespace conventions](policy-naming-javascript).
 
 The naming scheme for Moodle’s Javascript fits into the pattern:
 
@@ -98,7 +99,7 @@ The Moodle convention is to place calls to Web Services in a `repository` module
 Since `participants` is not a formal API in Moodle you must create your submodules in the `local/participants`
 directory.
 
-```bash
+```console
 .
 ├── local
 │   └── participants
@@ -110,16 +111,14 @@ directory.
 
 ## Writing your first module
 
-The convention in Moodle is to have one Javascript Module which is your
-initial entrypoint.
+The convention in Moodle is to have one Javascript Module which is your initial entrypoint.
 This usually provides a function called `init` which you then [export][guides_javascript-mdn-javascript_reference-export] from the module.
 This `init` function will be called by Moodle.
 
-Your module will probably also have one or more dependencies which you will
-`import`.
+Your module will probably also have one or more dependencies which you will `import`.
 
-As you start to build out the structure of your code you will start to export
-more functions, as well as Objects, Classes, and other data structures.
+As you start to build out the structure of your code you will start to export more functions, as well as Objects,
+Classes, and other data structures.
 
 :::{note}
 This guide is not intended to teach you how to write Javascript.
@@ -481,6 +480,8 @@ Strings are fetched on request from Moodle, and are then cached in LocalStorage.
 ## Example
 
 ```{literalinclude} _examples/str.js
+:language: javascript
+:linenos:
 ```
 
 ## Templates
@@ -500,7 +501,7 @@ Strings are fetched on request from Moodle, and are then cached in LocalStorage.
 We make use of a number of common and popular tools to ensure the quality of our code, and to improve the end-user
 experience.
 
-Most of our Javascript tooling requires {ref}`NodeJS <tools-nodejs>`.
+Most of our Javascript tooling requires [NodeJS](tools-nodejs).
 
 ### Grunt
 
@@ -514,8 +515,8 @@ in the background to build just the files you change as you write them.
 
 #### Installing grunt
 
-```bash
-npm -g install grunt-cli
+```console
+$ npm -g install grunt-cli
 ```
 
 #### Using grunt

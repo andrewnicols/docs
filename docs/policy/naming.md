@@ -1,6 +1,7 @@
+---
+title: Naming conventions
+---
 (policy-naming)=
-
-# Naming conventions
 
 (policy-naming-components)=
 
