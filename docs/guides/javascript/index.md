@@ -328,8 +328,8 @@ This simplest form of this is:
 
 Any time that this template is rendered and placed on the page the `mod_forum/discussion` module will be fetched and the `init()` function called on it.
 
-:::{important}
-Do not use {term}`arrow functions<Arrow functions>` directly in templates. Internet Explorer does not support arrow functions in any version.
+:::{admonition} Since Moodle 4.0
+Moodle no longer supports Internet Explorer. It is now safe to use {term}`Arrow functions<Arrow functions>`.
 :::
 
 Often you may want to link the Javascript to a specific `DOMElement` in the template.
