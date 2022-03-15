@@ -107,6 +107,7 @@ directory.
 │       └── selectors.js        // core_user/local/participants/repository
 └── participants.js             // core_user/participants
 ```
+
 :::
 
 ## Writing your first module
