@@ -39,7 +39,7 @@ jobs:
             ${{ runner.os }}-pip-
 
       - name: Install dependencies
-        run: python3 -m pip install 'docs[docs]'
+        run: python3 -m pip install '.[docs]'
 
       - run: sphinx-multiversion docs build/html
 
