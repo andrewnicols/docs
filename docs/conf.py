@@ -44,9 +44,9 @@ release = u'4.0.0'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'sphinx_multiversion',
     'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
-    'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
     'sphinx.ext.ifconfig',
@@ -109,6 +109,7 @@ html_theme = "sphinx_rtd_theme"
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = []
 
+# NOTE: html_sidebars is overridden by the rtd sphinx theme.
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
 #
@@ -179,11 +180,6 @@ texinfo_documents = [
 
 # -- Extension configuration -------------------------------------------------
 
-# -- Options for intersphinx extension ---------------------------------------
-
-# Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'https://docs.python.org/': None}
-
 # -- Options for todo extension ----------------------------------------------
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
@@ -198,3 +194,7 @@ myst_title_to_header = True
 
 # -- Options for MyST Number code blocks --
 myst_number_code_blocks = ["javascript", "js", "mustache", "html", "php"]
+
+# -- Sphinx multiversion configuration --
+smv_tag_whitelist = None # Do not build tags at this time.
+smv_released_pattern = r'^heads/\d+\.\d+$'    # Branches like "3.11".
