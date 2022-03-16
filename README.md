@@ -1,6 +1,6 @@
 # Moodle Developer Documentation Project
 
-Please note: This is a trial project to help us examine a range of different documentation systems for Moodle Developer documentation.
+Please note: This is a trial project to help examine a range of different documentation systems for Moodle Developer documentation.
 
 It is not the official source of Moodle Developer documentation at this time.
 
