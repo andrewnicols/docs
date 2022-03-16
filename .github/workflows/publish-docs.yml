@@ -6,7 +6,6 @@ on:
       # Only build on master for now.
       # Master will build all other branches.
       - master
-  pull_request:
 
 jobs:
   deploy:
