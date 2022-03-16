@@ -5,10 +5,9 @@ title: Glossary
 :::{glossary}
 component
 
-  Moodle is composed of a number of {term}`plugins <plugin>` and {term}`subsystems <subsystem>`. Collectively these are known as
-  components.
+  Moodle comprises of {term}`plugins <plugin>` and {term}`subsystems <subsystem>`, known as `components`.
 
-  Components all have a {term}`frankenstyle namespace` which is used across Moodle to reference files, classes,
+  Components all have a {term}`frankenstyle namespace`, used across Moodle to reference files, classes,
   templates, modules, and other features.
 
 subsystem
@@ -34,8 +33,6 @@ frankenstyle namespace
 
 Web Services
 
-  Moodle offers a number of Web Services.
-
-  These allow for integration with the Moodle frontend Javascript, the Moodle Mobile App, and can also be used for
-  other third-party integrations.
+  Web services allow for integration with the Moodle frontend Javascript, the
+  Moodle Mobile App, and can also be used for other third-party integrations.
 :::

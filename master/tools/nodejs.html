@@ -42,7 +42,7 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Developer guides</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../guides/javascript/index.html">Javascript</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../guides/javascript/index.html">JavaScript</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Policies and conventions</span></p>
 <ul>
@@ -51,7 +51,7 @@
 <p class="caption" role="heading"><span class="caption-text">Development tools</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">NodeJS</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#nvm">NVM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#node-version-manager">Node Version Manager</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#grunt">Grunt</a></li>
 </ul>
 </li>
@@ -88,13 +88,12 @@
              
   <section id="nodejs">
 <h1>NodeJS<a class="headerlink" href="#nodejs" title="Permalink to this headline"></a></h1>
-<p id="tools-nodejs">A number of development tools require the installation and use of <a class="reference external" href="https://nodejs.org/en/">NodeJS</a>, which is a JavaScript runtime
-environment available freely for most operating systems.</p>
-<p>Moodle currently requires version 16.14 of NodeJS, which is otherwise known as <code class="docutils literal notranslate"><span class="pre">lts/gallium</span></code>.</p>
-<p>We highly recommend using <a class="reference internal" href="#tool-nodejs-nvm"><span class="std std-ref">NVM</span></a> to install NodeJS rather than installing it directly.</p>
-<section id="nvm">
-<span id="tool-nodejs-nvm"></span><h2>NVM<a class="headerlink" href="#nvm" title="Permalink to this headline"></a></h2>
-<p><a class="reference external" href="https://github.com/nvm-sh/nvm">NVM</a> is the Node Version Manager. Its purpose is to simplify the installation, and use of multiple versions of NodeJS.</p>
+<p id="tools-nodejs">Moodle development tools require the installation and use of <a class="reference external" href="https://nodejs.org/en/">NodeJS</a>, which is a JavaScript runtime environment available for most operating systems.</p>
+<p>Moodle requires version 16.14 of NodeJS, which is otherwise known as <code class="docutils literal notranslate"><span class="pre">lts/gallium</span></code>.</p>
+<p>Use of <a class="reference internal" href="#tool-nodejs-nvm"><span class="std std-ref">NVM</span></a> for installation of NodeJS is highly recommended over direct installation.</p>
+<section id="node-version-manager">
+<span id="tool-nodejs-nvm"></span><h2>Node Version Manager<a class="headerlink" href="#node-version-manager" title="Permalink to this headline"></a></h2>
+<p><a class="reference external" href="https://github.com/nvm-sh/nvm">NVM</a> is the Node Version Manager. Its purpose is to simplify the installation, and use different versions of NodeJS.</p>
 <p>Moodle includes a <code class="docutils literal notranslate"><span class="pre">.nvmrc</span></code> which <code class="docutils literal notranslate"><span class="pre">nvm</span></code> can use to select the correct version of NodeJS.</p>
 <p>To use the correct version of NodeJS for the current version of Moodle, you can use the <code class="docutils literal notranslate"><span class="pre">nvm</span> <span class="pre">install</span></code> and <code class="docutils literal notranslate"><span class="pre">nvm</span> <span class="pre">use</span></code> commands:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ nvm install
@@ -107,14 +106,13 @@ Now using node v16.14.0 <span class="o">(</span>npm v8.3.1<span class="o">)</spa
 <section id="grunt">
 <h2>Grunt<a class="headerlink" href="#grunt" title="Permalink to this headline"></a></h2>
 <p>As part of it’s build stack, Moodle uses the <a class="reference external" href="https://gruntjs.com">Grunt</a> task runner.</p>
-<p>Grunt is composed of a set of tasks, defined within the Moodle code repository in the <code class="docutils literal notranslate"><span class="pre">Gruntfile.js</span></code> file, and a grunt
-CLI tool which must be installed separately.</p>
+<p>Grunt is composed of a set of tasks, defined within the Moodle code repository in the <code class="docutils literal notranslate"><span class="pre">Gruntfile.js</span></code> file, and a grunt CLI tool which must also be installed.</p>
 <p>To install the grunt CLI tool you can install it globally using npm:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ npm install -g grunt-cli
 $ grunt stylelint
 </pre></div>
 </div>
-<p>Alternatively you can use the <code class="docutils literal notranslate"><span class="pre">npx</span></code> command to install it on demand:</p>
+<p>You can also use the <code class="docutils literal notranslate"><span class="pre">npx</span></code> command to install it on demand:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ npx grunt stylelint
 </pre></div>
 </div>
