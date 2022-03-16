@@ -1,0 +1,18 @@
+on:
+  workflow_run:
+    workflows: ["Lint for Pull Requests"]
+    types:
+      - completed
+
+jobs:
+  vale:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Grab pull request sha1
+        run: |
+          echo "PR_SHA=$pr_sha" >> $GITHUB_ENV
+      - name: Vale Linter
+        uses: errata-ai/vale-action@v1.4.3
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          OVERRIDE_GITHUB_SHA: ${{env.PR_SHA}}
