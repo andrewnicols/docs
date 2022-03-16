@@ -1,35 +1,17 @@
 ---
-title: Javascript
+title: JavaScript
 ---
 
 
-Moodle makes heavy use of Javascript to improve the experience for its users.
+Moodle makes heavy use of JavaScript to improve the experience for its users.
 
-All new Javascript in Moodle should be written in the ES2015+ module format,
-which is transpiled into the CommonJS format.
+All new JavaScript in Moodle should use the ES2015+ module format, which is
+transpiled into the CommonJS format.
 Modules are loaded in the browser using the RequireJS loader.
 
-All Moodle Javascript can use the same Mustache templates and translated strings which are available to Moodle PHP code, and the standard Moodle web service framework can be used to fetch and store data.
+All Moodle JavaScript can use the same Mustache templates and translated strings which are available to Moodle PHP code, and the standard Moodle web service framework can be used to fetch and store data.
 
-This guide covers how to get started with Javascript in Moodle, and introduces key concepts and features including module format and structure, including your code, using templates, using translation features, tooling, and handling events.
-
-% --------------------------------------------------------------------------
-% Sam:
-% Probably you already are thinking of doing the new ES6 pattern already. So um, here are some things I can think of that might be useful not in any order... Passing data from PHP in the page (data attributes)... Web service calls... Getting strings... How to do jquery-ish stuff without jquery (document.querySelector etc)... Setting the flags to tell behat the page is busy (and maybe, this in conjunction with animations which is always a pain)...
-% David:
-% I would suggest to provide a lot of simple yet solid and actually useful working code examples. One thing I think is particularly useful are events.
-% Tim:
-% That is a good point David> Examples in documentation/need to be kept simple to make the key point you are trying to make. It is good if you can do that (but hopefully for semi-relalistic examples) and then link to real code examples in the Moodle code.
-%
-%
-% Passing data from PHP
-% - output functions
-% - data attributes
-% Web service calls
-% Strings
-% PendingJS
-% ES6 References
-% --------------------------------------------------------------------------
+This guide covers how to get started with JavaScript in Moodle, and introduces key concepts and features including module format and structure, including your code, using templates, using translation features, tooling, and handling events.
 
 :::{note}
 You may see the terms `ES6` and `ES2015` used interchangably.
@@ -40,24 +22,24 @@ specification.
 
 ## Useful References
 
-Moodle uses vanilla Javascript combined with a number of helpers for performing common actions, and
-a small collection of libraries for serving and managing dependencies.
+Moodle uses vanilla JavaScript combined with helpers for performing common actions, and a small collection of libraries
+for serving and managing dependencies.
 
-The Javascript documentation available on the Mozilla Developer Network is one of the best reference documentations
+The JavaScript documentation available on the Mozilla Developer Network is one of the best reference documentations
 available. You may find the following references particularly useful:
 
-- [MDN Javascript guide][guides_javascript-mdn-javascript_guide].
-- [MDN Javascript Reference][guides_javascript-mdn-javascript_reference].
+- [MDN JavaScript guide][guides_javascript-mdn-javascript_guide].
+- [MDN JavaScript Reference][guides_javascript-mdn-javascript_reference].
 - [ES2015+ Cheatsheet][guides_javascript-devhints-es6_cheatsheet]
 
 ## Modules
 
-Javascript in Moodle is structured into ES2015 modules which are transpiled into the CommonJS format.
+JavaScript in Moodle is structured into ES2015 modules which are transpiled into the CommonJS format.
 
-Like our PHP classes and Mustache templates, our Javascript modules each belong to a particular {term}`component`
+Like our PHP classes and Mustache templates, our JavaScript modules each belong to a particular {term}`component`
 and must be named according to our standard [name and namespace conventions](policy-naming-javascript).
 
-The naming scheme for Moodle’s Javascript fits into the pattern:
+The naming scheme for Moodle’s JavaScript fits into the pattern:
 
 `[component_name]/[optional/sub/namespace/][modulename]`
 
@@ -83,8 +65,8 @@ core_user/local/participants/selectors
 ```
 
 :::{tip}
-When structuring a new module you may find it clearer to create a main module with a number of related modules.
-You can create a clear relationship between your modules using subdirectories.
+When structuring a new module you may find it clearer to create a main entry-point module with related modules stored in
+a subdirectory.
 
 For example when creating a new module which controls interactions on the Participants page and which is part of
 the `core_user` component you will create a `participants` module.
@@ -96,7 +78,7 @@ The Moodle convention is to place the selectors in a `selectors` module.
 The module will also call a set of Web Services.
 The Moodle convention is to place calls to Web Services in a `repository` module.
 
-Since `participants` is not a formal API in Moodle you must create your submodules in the `local/participants`
+Since `participants` isn't a formal API in Moodle you must create your submodules in the `local/participants`
 directory.
 
 ```console
@@ -112,7 +94,7 @@ directory.
 
 ## Writing your first module
 
-The convention in Moodle is to have one Javascript Module which is your initial entrypoint.
+The convention in Moodle is to have one JavaScript Module which is your initial entrypoint.
 This usually provides a function called `init` which you then [export][guides_javascript-mdn-javascript_reference-export] from the module.
 This `init` function will be called by Moodle.
 
@@ -122,8 +104,8 @@ As you start to build out the structure of your code you will start to export mo
 Classes, and other data structures.
 
 :::{note}
-This guide is not intended to teach you how to write Javascript.
-If you are new to Javascript, you may want to start with the [MDN Javascript
+This guide isn't intended to teach you how to write JavaScript.
+If you are new to JavaScript, you may want to start with the [MDN JavaScript
 basics guide][guides-javascript-mdn-javascript_getting_started].
 :::
 
@@ -146,7 +128,7 @@ with the text `"Hello, world!"`.
 
 ### Listen to a DOM Event
 
-In most cases you will want to perform an action in response to a user
+Usually you will want to perform an action in response to a user
 interacting with the page.
 
 You can use the [document.addEventListener()][guides_javascript-mdn-javascript_reference-addeventlistener] method to do
@@ -169,9 +151,9 @@ In this example any time that a user clicks anywhere on the document the item
 that was clicked on will be logged to the browser console.
 
 Usually you won't want to listen for every click in the document but only for
-some of the Elements in the page.
+some Elements in the page.
 
-If you wanted to display a browser alert every time a user clicks on a buttn,
+If you wanted to display a browser alert every time a user clicks on a button,
 you might have a template like the following example:
 
 ```{code-block} mustache
@@ -181,7 +163,7 @@ you might have a template like the following example:
  <button data-action="mod_example/helloworld-update_button">Click me</button>
 ```
 
-You can write a listener which only looks for clicks to this button:
+You can write a listener which looks for clicks to this button:
 
 ```{code-block} javascript
 :linenos: true
@@ -204,20 +186,19 @@ You can write a listener which only looks for clicks to this button:
 
 This example shows several conventions that are used in Moodle:
 
-- CSS Selectors are often stored separately to the code in a `Selectors`
-  object. This allows you to easily re-use a Selector and to group them
+- CSS Selectors are often stored separate to the code in a `Selectors`
+  object. This allows you to re-use a Selector and to group them
   together in different ways. It also places all selectors in one place so
-  that you can update them more easily.
+  that they're easier to update.
 - The `Selectors` object is stored in a `const` variable which is \_not\_
-  exported. This means that it is private and only available within your
+  exported. This means that it's private and only available within your
   module.
-- A `data-*` attribute is used to identify the button in the Javascript
+- A `data-*` attribute is used to identify the button in the JavaScript
   module.
   Moodle advises not to use class selectors when attaching event listeners because
-  so that it is easier to restyle for different themes without any changes to
-  the Javascript later.
-- A namespace is used for the `data-action` to clearly identify what the
-  button is intended for.
+  so that it's easier to restyle for different themes without any changes to
+  the JavaScript later.
+- A namespace is used for the `data-action` to identify what the button is intended for.
 - By using `e.target.closest()` you can check whether the element that was
   clicked on, or any of its parent elements matches the supplied CSS Selector.
 
@@ -273,8 +254,7 @@ For example:
  };
 ```
 
-You will notice a number of key differences in this example when compared with
-the previous one:
+You will notice several key differences in this example when compared with the previous one:
 
 - The list of Selectors has been moved to a new Module which is included using
   the [import][guides_javascript-mdn-javascript_reference-import] keyword.
@@ -282,32 +262,32 @@ the previous one:
 - The call to `document.addEventListener` has been moved to a new
   `registerEventListeners` function.
   This is another Moodle convention which encourages you to structure your
-  code so that each part has clear responsibilites.
-- There is only one event listener and it checks if the Element clicked on was
-  one that it is interested in.
+  code so that each part has clear responsibilities.
+- One event listener is present and it checks if the Element clicked on was
+  one that it's interested in.
 
-## Including Javascript from your pages
+## Including JavaScript from your pages
 
-Once you have written a Javascript module you need a way to include it within your content.
+Once you have written a JavaScript module you need a way to include it within your content.
 
-There are three main ways to include your Javascript and the best way will depend on your content. These are:
+Moodle has three main ways to include your JavaScript and the best way will depend on your content. These are:
 
 - from a template via `requirejs`;
 - from PHP via the output requirements API; and
-- from other Javascript via `import` or `requirejs`.
+- from other JavaScript via `import` or `requirejs`.
 
 ### Including from a template
 
-Most recent code in Moodle makes heavy use of Mustache templates and you will usually find that your Javascript is
+Most recent code in Moodle makes heavy use of Mustache templates and you will often find that your JavaScript is
 directly linked to the content of one of your templates.
 
-All javascript in Mustache templates must be places in a `{{#js}}` tag.
-This tag ensures that all Javascript is called in a consistent and reliable way.
+All JavaScript in Mustache templates must be places in a `{{#js}}` tag.
+This tag ensures that all JavaScript is called in a consistent and reliable way.
 
 :::{caution}
-You should not add too much Javascript directly to a template.
-Javascript placed directly into Templates is not transpiled for consistent use in all browsers and it is not passed through minification processes.
-Some browser-specific features will not be available.
+You shouldn't add too much JavaScript directly to a template.
+JavaScript placed directly into Templates isn't transpiled for consistent use in all browsers and it isn't passed through minification processes.
+Some browser-specific features won't be available.
 :::
 
 This simplest form of this is:
@@ -330,11 +310,11 @@ This simplest form of this is:
 Any time that this template is rendered and placed on the page the `mod_forum/discussion` module will be fetched and the `init()` function called on it.
 
 :::{admonition} Since Moodle 4.0
-Moodle no longer supports Internet Explorer. It is now safe to use {term}`Arrow functions<Arrow functions>`.
+Moodle no longer supports Internet Explorer. It's now safe to use {term}`Arrow functions<Arrow functions>`.
 :::
 
-Often you may want to link the Javascript to a specific `DOMElement` in the template.
-You can easily use the `{{uniqid}}` Mustache tag to give that DOM Element a unique ID and then pass that into the Module.
+Often you may want to link the JavaScript to a specific `DOMElement` in the template.
+You can use the `{{uniqid}}` Mustache tag to give that DOM Element a unique ID and then pass that into the Module.
 
 ```mustache
 <div id=“mod_forum-discussion-wrapper-{{uniqid}}”>
@@ -352,8 +332,8 @@ In this example you have added a new `id` to the `div` element.
 You then fetch the DOM Element using this id and pass it into the `init` function.
 
 :::{note}
-The `{{uniqid}}` tag gives a new unique string for each rendered template including all of its children.
-It is not a true unique id and must be combined with other information in the template to make it unique.
+The `{{uniqid}}` tag gives a new unique string for each rendered template including all its children.
+It isn't a true unique id and must be combined with other information in the template to make it unique.
 :::
 
 ### Including from PHP
@@ -362,10 +342,12 @@ Much of Moodle’s code still creates HTML content in PHP directly.
 This might be a simple `echo` statement or using the `html_writer` output functions.
 A lot of this content is being migrated to use Mustache Templates which are the recommended approach for new content.
 
-Where content is generated in PHP you will need to include your Javascript at the same time.
+Where content is generated in PHP you will need to include your JavaScript at the same time.
 
-There are several older ways to include Javascript from PHP, but for all new Javascript we recommend only using the `js_call_amd` function on the `page_requirements_manager`.
-This has a very similar format to the version used in Templates:
+Although several older ways to include JavaScript from PHP, it`s strongly
+recommended that all new JavaScript only use the `js_call_amd` function on the
+`page_requirements_manager`.
+This has a similar format to the version used in Templates:
 
 ```php
 // Call the `init` function on `mod_forum/discussion`.
@@ -381,7 +363,7 @@ You can also pass arguments to your function by passing an array as the third ar
 $PAGE->requires->js_call_amd(‘mod_forum/discussion’, ‘init’, [$course->id]);
 ```
 
-If you pass a multi-dimensional array as the third argument, then you can use Array destructuring within the Javascript to get named values.
+If you pass a multi-dimensional array as the third argument, then you can use Array destructuring within the JavaScript to get named values.
 
 ```php
 $PAGE->requires->js_call_amd(‘mod_forum/discussion’, ‘init’, [[
@@ -398,22 +380,21 @@ export const init = ({courseid, category}) => {
 ```
 
 :::{caution}
-There is a limit to the length of the parameters passed in the third argument.
-You should only pass information required by the Javascript which is not alrady available in the DOM.
+A limit applies to the length of the parameters passed in the third argument.
+If data is already available elsewhere in the DOM, you shoudl avoid passing it as a parameter.
 :::
 
 ## Passing data to your Module
 
-You will often need to work with data as part of your Javascript module.
+You will often need to work with data as part of your JavaScript module.
 This might be simple data, like the a database id, or it may be more complex
 like full Objects.
 
-In most cases you will be able to store this data in the DOM as a data
-attribute which you can fetch with your Javascript.
-In some cases you will need to use Moodle Web Services to fetch this data
-instead.
-A small amount of data can be passed into the initialisation of your
-Javascript module, but this is no longer recommended.
+Moodle provides several ways to achieve this:
+
+* you can pass a small amount of data into the module initialisation, but this is no longer recommended
+* you can store this data in the DOM as a data attribute which is fetched in your code
+* a Moodle Web Service can be used to fetch more complex data structures dynamically
 
 ### Using data attributes
 
@@ -448,8 +429,8 @@ The easiest way to pass data is to use data attributes.
 ```
 
 :::{important}
-You should not use the `done`, `fail`, or `always` functions on Promises.
-These are a jQuery feature which is not present in the Native Promise implementation.
+You shouldn't use the `done`, `fail`, or `always` functions on Promises.
+These are a jQuery feature which isn't present in the Native Promise implementation.
 :::
 
 ### Examples
@@ -471,8 +452,7 @@ const getModal = questionBody => {
 
 ## Working with Strings
 
-One of the most helpful core modules is `core/str` which allows you to easily fetch and render language Strings in
-Javascript.
+One of the most helpful core modules is `core/str` which allows you to fetch and render language Strings in JavaScript.
 
 The `core/str` module has two main functions, which both return Promises containing the resolved string.
 
@@ -499,15 +479,14 @@ Strings are fetched on request from Moodle, and are then cached in LocalStorage.
 
 ## Tools
 
-We make use of a number of common and popular tools to ensure the quality of our code, and to improve the end-user
-experience.
+Moodle uses common and popular tools to ensure code quality, and to improve the
+end-user experience.
 
-Most of our Javascript tooling requires [NodeJS](tools-nodejs).
+Most of the Moodle JavaScript tooling requires [NodeJS](tools-nodejs).
 
 ### Grunt
 
-[Grunt] is a command-line tool used to compile Javascript, and CSS, and to validate and lint Javascript, CSS, Behat tests,
-and more.
+[Grunt] is a command-line tool used to compile JavaScript, and CSS, and to lint JavaScript, CSS, and Behat tests.
 
 :::{tip}
 Rather than running `grunt` on the entire Moodle source every time you make changes, you can use `grunt watch`
@@ -534,10 +513,10 @@ grunt
 Arrow functions
 
   An arrow function is a shorthand way of writing a regular function.
-  They have a number of small but important differences to regular functions which make them easier to use in most
+  These have several small but important differences to regular functions which make them easier to use in most
   cases, but unsuitable in some others.
 
-  They are not suitable for use in code which is not transpiled as Internet Explorer does not offer any support for
+  They're not suitable for use in code which isn't transpiled as Internet Explorer doesn't offer any support for
   them.
 
   For more information see the [MDN documentation for Arrow function expressions][guides_javascript-mdn-arrow_functions].
