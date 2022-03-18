@@ -58,6 +58,9 @@ jobs:
       - name: Generate docs
         run: ./scripts/generate_jsdoc.sh
 
+      - name: Copy main index in place
+        run: cp ./.github/index.html build/html/index.html
+
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.ref == 'refs/heads/master' }}
