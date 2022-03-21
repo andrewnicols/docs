@@ -2,16 +2,18 @@
 title: Moodle {{env.config.version}} Developer documentation
 ---
 
-## First steps
+## Getting started
 
 ```{toctree}
-:caption: First steps
+:caption: Getting started
 :hidden: true
+
+gettingstarted/setup
 ```
 
-% intro/install
+{doc}`gettingstarted/setup`
 
-% test
+: Setup and Installation
 
 ## Developer guides
 
@@ -46,7 +48,17 @@ policy/naming
 :hidden: true
 
 tools/nodejs
+tools/mdk
+tools/phpcs
 ```
+
+{doc}`tools/phpcs`
+
+: PHP CodeSniffer
+
+{doc}`tools/mdk`
+
+: Moodle Development Kit (MDK)
 
 {doc}`tools/nodejs`
 
