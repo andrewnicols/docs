@@ -26,5 +26,5 @@ sphinx-multiversion docs build/html
 These docs are currently automatically built for the main version branches and
 are automatically deployed to:
 
-* https://andrewnicols.github.io/docs/master
-* https://arn-moodledocs.readthedocs.io/en/latest/
+- https://andrewnicols.github.io/docs/master
+- https://arn-moodledocs.readthedocs.io/en/latest/
