@@ -32,7 +32,7 @@ fi
 
 # Add some EXCLUDE_PATTERNS defaults (last without backslash!
 # (not sure about the tinymce & pear but they are noisy so keeping them out. Maybe some need to be added to thirdpaty.xml ?)
-EXCLUDE_PATTERNS="${EXCLUDE_PATTERNS}*/.git/* \\
+export EXCLUDE_PATTERNS="${EXCLUDE_PATTERNS}*/.git/* \\
 */lib/editor/tinymce/plugins/* \\
 */lib/pear/* \\
 */node_modules/* \\
@@ -72,10 +72,12 @@ fi
 rm -fr ${OUTPUT_DIRECTORY}/html ${OUTPUT_DIRECTORY}/xml
 
 # Run Doxygen from script dir
-echo "    - Project brief: ${PROJECT_BRIEF}"
-echo "    - Using Doxyfile: ${DOXYFILE}"
+echo "Building PHP Documentation using:"
+echo "    - Input ${INPUT}"
 echo "    - Generating ${TYPE}"
 echo "    - Output: ${OUTPUT}"
+echo "    - Project brief: ${PROJECT_BRIEF}"
+echo "    - Using Doxyfile: ${DOXYFILE}"
 
 cd "${ROOT}"
-(cat ${PHPDOCROOT}/${DOXYFILE}; echo EXCLUDE_PATTERNS = "${EXCLUDE_PATTERNS}") | doxygen -
+doxygen "${PHPDOCROOT}/${DOXYFILE}"
