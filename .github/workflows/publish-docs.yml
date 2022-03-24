@@ -55,8 +55,15 @@ jobs:
         with:
           node-version-file: '.moodle/.nvmrc'
 
-      - name: Generate docs
-        run: ./scripts/generate_jsdoc.sh
+      - name: Generate all jsdocs
+        run: ./scripts/generate_jsdocs.sh
+
+      - name: Build doxygen
+        run: |
+          docker build --tag=doxygen phpdocs/doxygen
+
+      - name: Generate all phpdocs
+        run: ./scripts/generate_all_phpdocs.sh
 
       - name: Copy main index in place
         run: cp ./.github/index.html build/html/index.html
