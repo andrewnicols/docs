@@ -9,3 +9,4 @@ build
 .moodle
 /.github/styles/write-good
 /.github/styles/Microsoft
+Doxygen.*
