@@ -40,7 +40,12 @@ for index in ${!VERSIONLIST[@]}; do
   npm ci
 
   echo "========================================"
-  echo "==Generating JS Documentation"
+  echo "== Generating ignorefiles"
+  echo "========================================"
+  npx grunt ignorefiles
+
+  echo "========================================"
+  echo "== Generating JS Documentation"
   echo "========================================"
   npx grunt jsdoc
 

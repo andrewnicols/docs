@@ -1,4 +1,4 @@
-name: Publish API docs to Github Pages
+name: Generate API docs and publish to Github Pages
 
 env:
   BRANCHLIST: "MOODLE_311_STABLE master"
@@ -31,15 +31,11 @@ jobs:
         with:
           node-version-file: '.moodle/.nvmrc'
 
-      - name: Generate all jsdocs
-        run: ./scripts/generate_jsdocs.sh
-
       - name: Build doxygen
-        run: |
-          docker build --tag=doxygen phpdocs/doxygen
+        run: docker build --tag=doxygen phpdocs/doxygen
 
-      - name: Generate all phpdocs
-        run: ./scripts/generate_all_phpdocs.sh
+      - name: Generate all API Documentation
+        run: ./scripts/generate_api_apidocs.sh
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
