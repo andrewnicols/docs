@@ -17,7 +17,7 @@ echo "==========================================================================
 for index in ${!VERSIONLIST[@]}; do
   version=${VERSIONLIST[$index]}
   moodlebranch=${BRANCHLIST[$index]}
-  APIDOCDIR="build/apidocs/${VERSION}"
+  APIDOCDIR="build/apidocs/${version}"
   echo "========================================"
   echo "== Generating all API Documentation for ${version} using branch ${moodlebranch}"
   echo "== Generated documentation will be placed into ${APIDOCDIR}"
@@ -50,10 +50,10 @@ for index in ${!VERSIONLIST[@]}; do
   npx grunt jsdoc
 
   echo "========================================"
-  echo "==Moving phpdocs into ${APIDOCDIR}/jsdoc"
+  echo "== Moving jsdocs into ${APIDOCDIR}/jsdoc"
   echo "========================================"
   cd "${ROOT}"
-  mv "${JSDOCROOT}" "build/apidocs/${version}/jsdoc"
+  mv "${INPUT}/jsdoc" "build/apidocs/${version}/jsdoc"
 
   echo "========================================"
   echo "==Building PHP Documentation"
