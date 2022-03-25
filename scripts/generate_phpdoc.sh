@@ -18,7 +18,7 @@ export TYPE="${1:-html}"
 export DOXYFILE="Doxyfile"
 export HTML_EXTRA_STYLESHEET=doxygen-styles.css
 
-export OUTPUT="${ROOT}/build/html/${VERSION}/phpdoc"
+export OUTPUT="${ROOT}/build/phpdoc/${VERSION}"
 export OUTPUT_DIRECTORY="${OUTPUT}"
 
 export EXCLUDE_PATTERNS=

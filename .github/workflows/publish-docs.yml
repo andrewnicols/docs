@@ -44,27 +44,6 @@ jobs:
 
       - run: sphinx-multiversion docs build/html
 
-      - name: Checkout Moodle
-        uses: actions/checkout@v3
-        with:
-          repository: moodle/moodle
-          path: .moodle
-
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version-file: '.moodle/.nvmrc'
-
-      - name: Generate all jsdocs
-        run: ./scripts/generate_jsdocs.sh
-
-      - name: Build doxygen
-        run: |
-          docker build --tag=doxygen phpdocs/doxygen
-
-      - name: Generate all phpdocs
-        run: ./scripts/generate_all_phpdocs.sh
-
       - name: Copy main index in place
         run: cp ./.github/index.html build/html/index.html
 
@@ -74,4 +53,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/html
-
+          destination_dir: docs

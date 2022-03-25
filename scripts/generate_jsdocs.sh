@@ -1,14 +1,32 @@
-#!/bin/sh
+#!/usr/bin/env bash
+set -e
 
-for version in `ls build/html/`
-do
-  moodlebranch=`git show "remotes/origin/${version}":.moodlebranch`
-  cd .moodle
+SCRIPTSDIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+ROOT="$( cd "$( dirname "${SCRIPTSDIR}" )" && pwd )"
+MOODLEROOT="${ROOT}/.moodle"
+JSDOCROOT="${MOODLEROOT}/jsdoc"
+
+VERSIONLIST=(${VERSIONLIST[@]:-master})
+BRANCHLIST=(${BRANCHLIST[@]:-master})
+
+echo "Building for the following versions (branches): ${VERSIONLIST[*]} (${BRANCHLIST[*]})"
+
+for index in ${!VERSIONLIST[@]}; do
+  version=${VERSIONLIST[$index]}
+  moodlebranch=${BRANCHLIST[$index]}
+  echo "Generating jsdocs for {$version} using branch ${moodlebranch}"
+
+  echo "Checking out remote branch"
+  cd "${MOODLEROOT}"
   git fetch origin "${moodlebranch}"
   git checkout "remotes/origin/${moodlebranch}"
-  cat version.php
+
+  echo "Building jsdoc"
   npm ci
   npx grunt jsdoc
-  cd -
-  cp -r .moodle/jsdoc "build/html/$version/jsdoc"
+
+  echo "Moving into place"
+  cd "${ROOT}"
+  mkdir -p "build/apidocs/${version}"
+  mv "${JSDOCROOT}" "build/apidocs/${version}/jsdoc"
 done
