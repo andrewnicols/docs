@@ -1,3 +1,5 @@
+name: "Add attributions to Github Pull Requests"
+
 on:
   workflow_run:
     workflows: ["Lint for Pull Requests"]
