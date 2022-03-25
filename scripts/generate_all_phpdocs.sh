@@ -14,7 +14,6 @@ for index in ${!VERSIONLIST[@]}; do
   version=${VERSIONLIST[$index]}
   moodlebranch=${BRANCHLIST[$index]}
   echo "Generating phpdocs for ${version} using branch ${moodlebranch}"
-  exit 1
 
   # Change into the Moodle directory to get some information.
   export INPUT="${ROOT}/.moodle"

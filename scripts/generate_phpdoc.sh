@@ -79,5 +79,5 @@ echo "    - Output: ${OUTPUT}"
 echo "    - Project brief: ${PROJECT_BRIEF}"
 echo "    - Using Doxyfile: ${DOXYFILE}"
 
-cd "${ROOT}"
+cd "${$PHPDOCROOT}"
 doxygen "${PHPDOCROOT}/${DOXYFILE}"
