@@ -56,7 +56,7 @@ for index in ${!VERSIONLIST[@]}; do
   mv "${INPUT}/jsdoc" "build/apidocs/${version}/jsdoc"
 
   echo "========================================"
-  echo "==Building PHP Documentation"
+  echo "== Building PHP Documentation"
   echo "========================================"
   # Generate the php documentation
   docker run \
@@ -65,6 +65,7 @@ for index in ${!VERSIONLIST[@]}; do
       -e HASH="${HASH}" \
       -e INPUT="${INPUT}" \
       -e VERSION="${version}" \
+      -u "${UID}":"${UID}" \
       doxygen
 
   # Move the built files into the build directory

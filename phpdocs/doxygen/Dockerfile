@@ -1,6 +1,6 @@
 FROM alpine:edge
 
-ENV PACKAGES="doxygen graphviz ttf-freefont php bash git"
+ENV PACKAGES="doxygen graphviz ttf-freefont php bash"
 RUN apk add $PACKAGES
 RUN ln -s /usr/bin/php7 /usr/bin/php
 

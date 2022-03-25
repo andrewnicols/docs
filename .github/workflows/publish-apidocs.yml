@@ -1,8 +1,8 @@
 name: Generate API docs and publish to Github Pages
 
 env:
-  BRANCHLIST: "MOODLE_311_STABLE master"
-  VERSIONLIST: "3.11 master"
+  BRANCHLIST: "master"
+  VERSIONLIST: "master"
 
 on:
   schedule:
@@ -43,3 +43,9 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build/apidocs
           destination_dir: apidocs
+
+      - name: Archive Build Logs
+        uses: actions/upload-artifact@v3
+        with:
+          name: buildlogs
+          path: logs
