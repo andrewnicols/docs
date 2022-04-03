@@ -25,7 +25,7 @@
   <td id="projectalign">
    <div id="projectname">Moodle PHP Documentation<span id="projectnumber">&#160;4.0</span>
    </div>
-   <div id="projectbrief">Moodle 4.0beta+ (Build: 20220325) (efda17d3)</div>
+   <div id="projectbrief">Moodle 4.0beta+ (Build: 20220401) (b5f51883)</div>
   </td>
  </tr>
  </tbody>
@@ -130,9 +130,6 @@ Functions</h2></td></tr>
 <tr class="memitem:gac0cd4113dc2a07937f2a8107cdc3453a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d13/group__core__install.html#gac0cd4113dc2a07937f2a8107cdc3453a">upgrade_letter_boundary_needs_freeze</a> ($<a class="el" href="../../da/d04/classcontext.html">context</a>)</td></tr>
 <tr class="memdesc:gac0cd4113dc2a07937f2a8107cdc3453a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks the letter boundary of the provided context to see if it needs freezing.  <a href="../../da/d13/group__core__install.html#gac0cd4113dc2a07937f2a8107cdc3453a">More...</a><br /></td></tr>
 <tr class="separator:gac0cd4113dc2a07937f2a8107cdc3453a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga134666c377ebe500fa068255535d9ccf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d13/group__core__install.html#ga134666c377ebe500fa068255535d9ccf">upgrade_migrate_question_table</a> ()</td></tr>
-<tr class="memdesc:ga134666c377ebe500fa068255535d9ccf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Split question table in 2 new tables:  <a href="../../da/d13/group__core__install.html#ga134666c377ebe500fa068255535d9ccf">More...</a><br /></td></tr>
-<tr class="separator:ga134666c377ebe500fa068255535d9ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga79b56a13a2a4e6cc072d2c90bfb8d919"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d13/group__core__install.html#ga79b56a13a2a4e6cc072d2c90bfb8d919">upgrade_mysql_get_supported_tables</a> ()</td></tr>
 <tr class="memdesc:ga79b56a13a2a4e6cc072d2c90bfb8d919"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all non-view and non-temp tables with sane names.  <a href="../../da/d13/group__core__install.html#ga79b56a13a2a4e6cc072d2c90bfb8d919">More...</a><br /></td></tr>
 <tr class="separator:ga79b56a13a2a4e6cc072d2c90bfb8d919"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -860,30 +857,6 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga134666c377ebe500fa068255535d9ccf" name="ga134666c377ebe500fa068255535d9ccf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga134666c377ebe500fa068255535d9ccf">&#9670;&nbsp;</a></span>upgrade_migrate_question_table()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">upgrade_migrate_question_table </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Split question table in 2 new tables: </p>
-<p >question_bank_entries question_versions</p>
-<p >Move the random questions records to the following table: question_set_reference</p>
-<p >Move the question related records from quiz_slots table to: question_reference</p>
-<p >Move the tag related data from quiz_slot_tags to: question_references</p>
-<p >For more information: <a href="https://moodle.org/mod/forum/discuss.php?d=417599#p1688163">https://moodle.org/mod/forum/discuss.php?d=417599#p1688163</a> </p>
-
-</div>
-</div>
 <a id="ga79b56a13a2a4e6cc072d2c90bfb8d919" name="ga79b56a13a2a4e6cc072d2c90bfb8d919"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga79b56a13a2a4e6cc072d2c90bfb8d919">&#9670;&nbsp;</a></span>upgrade_mysql_get_supported_tables()</h2>
 
@@ -1078,7 +1051,7 @@ Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 27 2022 02:36:26 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+Generated on Sun Apr 3 2022 02:44:49 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>

@@ -25,7 +25,7 @@
   <td id="projectalign">
    <div id="projectname">Moodle PHP Documentation<span id="projectnumber">&#160;4.0</span>
    </div>
-   <div id="projectbrief">Moodle 4.0beta+ (Build: 20220325) (efda17d3)</div>
+   <div id="projectbrief">Moodle 4.0beta+ (Build: 20220401) (b5f51883)</div>
   </td>
  </tr>
  </tbody>
@@ -766,12 +766,6 @@ Functions</h2></td></tr>
 <tr class="memitem:gae51d0d1bc8ce95525cf431c6a345e8b1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df0/group__mod__quiz.html#gae51d0d1bc8ce95525cf431c6a345e8b1">quiz_reset_userdata</a> ($data)</td></tr>
 <tr class="memdesc:gae51d0d1bc8ce95525cf431c6a345e8b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actual implementation of the reset course functionality, delete all the quiz attempts for course $data-&gt;courseid, if $data-&gt;reset_quiz_attempts is set and true.  <a href="../../dd/df0/group__mod__quiz.html#gae51d0d1bc8ce95525cf431c6a345e8b1">More...</a><br /></td></tr>
 <tr class="separator:gae51d0d1bc8ce95525cf431c6a345e8b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaaa9069a0b08025f1017aea8ad4d3c917"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df0/group__mod__quiz.html#gaaa9069a0b08025f1017aea8ad4d3c917">quiz_retrieve_slot_tag_ids</a> ($slotid)</td></tr>
-<tr class="memdesc:gaaa9069a0b08025f1017aea8ad4d3c917"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves tag ids for the given quiz slot.  <a href="../../dd/df0/group__mod__quiz.html#gaaa9069a0b08025f1017aea8ad4d3c917">More...</a><br /></td></tr>
-<tr class="separator:gaaa9069a0b08025f1017aea8ad4d3c917"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab14bb4290fab4f60ec7a1bbc0d30265d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df0/group__mod__quiz.html#gab14bb4290fab4f60ec7a1bbc0d30265d">quiz_retrieve_slot_tags</a> ($slotid)</td></tr>
-<tr class="memdesc:gab14bb4290fab4f60ec7a1bbc0d30265d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves tag information for the given quiz slot.  <a href="../../dd/df0/group__mod__quiz.html#gab14bb4290fab4f60ec7a1bbc0d30265d">More...</a><br /></td></tr>
-<tr class="separator:gab14bb4290fab4f60ec7a1bbc0d30265d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac7b407078bc0d6583a6e5ac1edcd1b99"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/df0/group__mod__quiz.html#gac7b407078bc0d6583a6e5ac1edcd1b99">quiz_retrieve_tags_for_slot_ids</a> ($slotids)</td></tr>
 <tr class="memdesc:gac7b407078bc0d6583a6e5ac1edcd1b99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves tag information for the given list of quiz slot ids.  <a href="../../dd/df0/group__mod__quiz.html#gac7b407078bc0d6583a6e5ac1edcd1b99">More...</a><br /></td></tr>
 <tr class="separator:gac7b407078bc0d6583a6e5ac1edcd1b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -5443,72 +5437,6 @@ $plugin&#160;</td><td class="memItemRight" valign="bottom"><b>version</b> = 2022
 
 </div>
 </div>
-<a id="gaaa9069a0b08025f1017aea8ad4d3c917" name="gaaa9069a0b08025f1017aea8ad4d3c917"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaaa9069a0b08025f1017aea8ad4d3c917">&#9670;&nbsp;</a></span>quiz_retrieve_slot_tag_ids()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">quiz_retrieve_slot_tag_ids </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$slotid</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retrieves tag ids for the given quiz slot. </p>
-<p >A quiz slot have some tags if and only if it is representing a random question by tags.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramtype">int</td><td class="paramname">$slotid</td><td>The id of the quiz slot. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">int[]</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="gab14bb4290fab4f60ec7a1bbc0d30265d" name="gab14bb4290fab4f60ec7a1bbc0d30265d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gab14bb4290fab4f60ec7a1bbc0d30265d">&#9670;&nbsp;</a></span>quiz_retrieve_slot_tags()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">quiz_retrieve_slot_tags </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$slotid</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Retrieves tag information for the given quiz slot. </p>
-<p >A quiz slot have some tags if and only if it is representing a random question by tags.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramtype">int</td><td class="paramname">$slotid</td><td>The id of the quiz slot. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">array</td><td>List of tags. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="gac7b407078bc0d6583a6e5ac1edcd1b99" name="gac7b407078bc0d6583a6e5ac1edcd1b99"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gac7b407078bc0d6583a6e5ac1edcd1b99">&#9670;&nbsp;</a></span>quiz_retrieve_tags_for_slot_ids()</h2>
 
@@ -6897,7 +6825,7 @@ $plugin&#160;</td><td class="memItemRight" valign="bottom"><b>version</b> = 2022
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 27 2022 02:36:27 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+Generated on Sun Apr 3 2022 02:44:50 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>

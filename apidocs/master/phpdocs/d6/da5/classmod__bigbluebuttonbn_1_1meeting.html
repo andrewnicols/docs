@@ -25,7 +25,7 @@
   <td id="projectalign">
    <div id="projectname">Moodle PHP Documentation<span id="projectnumber">&#160;4.0</span>
    </div>
-   <div id="projectbrief">Moodle 4.0beta+ (Build: 20220325) (efda17d3)</div>
+   <div id="projectbrief">Moodle 4.0beta+ (Build: 20220401) (b5f51883)</div>
   </td>
  </tr>
  </tbody>
@@ -139,6 +139,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a647c7b39a170fbc13a1f57c018b05555"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da5/classmod__bigbluebuttonbn_1_1meeting.html#a647c7b39a170fbc13a1f57c018b05555">do_get_meeting_info</a> (bool $updatecache=false)</td></tr>
 <tr class="memdesc:a647c7b39a170fbc13a1f57c018b05555"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return meeting information for this meeting.  <a href="../../d6/da5/classmod__bigbluebuttonbn_1_1meeting.html#a647c7b39a170fbc13a1f57c018b05555">More...</a><br /></td></tr>
 <tr class="separator:a647c7b39a170fbc13a1f57c018b05555"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86970b247275bd18dcf7208c68a60474"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/da5/classmod__bigbluebuttonbn_1_1meeting.html#a86970b247275bd18dcf7208c68a60474">get_status_message</a> (object $meetinginfo, <a class="el" href="../../dd/d8e/classmod__bigbluebuttonbn_1_1instance.html">instance</a> $<a class="el" href="../../dd/d8e/classmod__bigbluebuttonbn_1_1instance.html">instance</a>)</td></tr>
+<tr class="memdesc:a86970b247275bd18dcf7208c68a60474"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deduce status message from the current meeting info and the instance.  <a href="../../d6/da5/classmod__bigbluebuttonbn_1_1meeting.html#a86970b247275bd18dcf7208c68a60474">More...</a><br /></td></tr>
+<tr class="separator:a86970b247275bd18dcf7208c68a60474"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-methods" name="pro-static-methods"></a>
 Static Protected Member Functions</h2></td></tr>
@@ -495,6 +498,57 @@ stdClass&#160;</td><td class="memItemRight" valign="bottom"><b>$meetinginfo</b> 
 
 </div>
 </div>
+<a id="a86970b247275bd18dcf7208c68a60474" name="a86970b247275bd18dcf7208c68a60474"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86970b247275bd18dcf7208c68a60474">&#9670;&nbsp;</a></span>get_status_message()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mod_bigbluebuttonbn\meeting::get_status_message </td>
+          <td>(</td>
+          <td class="paramtype">object&#160;</td>
+          <td class="paramname"><em>$meetinginfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../dd/d8e/classmod__bigbluebuttonbn_1_1instance.html">instance</a>&#160;</td>
+          <td class="paramname"><em>$instance</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deduce status message from the current meeting info and the instance. </p>
+<p >Returns the human-readable message depending on if the user must wait to join, the meeting has not yet started ... </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">object</td><td class="paramname">$meetinginfo</td><td></td></tr>
+    <tr><td class="paramtype">instance</td><td class="paramname">$instance</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">string</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a68774a6c39fb44650a47eb17f2b7b176" name="a68774a6c39fb44650a47eb17f2b7b176"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a68774a6c39fb44650a47eb17f2b7b176">&#9670;&nbsp;</a></span>get_unique_meetingid_seed()</h2>
 
@@ -822,7 +876,7 @@ stdClass&#160;</td><td class="memItemRight" valign="bottom"><b>$meetinginfo</b> 
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 27 2022 02:38:05 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+Generated on Sun Apr 3 2022 02:46:37 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>

@@ -25,7 +25,7 @@
   <td id="projectalign">
    <div id="projectname">Moodle PHP Documentation<span id="projectnumber">&#160;4.0</span>
    </div>
-   <div id="projectbrief">Moodle 4.0beta+ (Build: 20220325) (efda17d3)</div>
+   <div id="projectbrief">Moodle 4.0beta+ (Build: 20220401) (b5f51883)</div>
   </td>
  </tr>
  </tbody>
@@ -291,6 +291,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a91ec7d57e8999fa9ea6107d531064e7d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/da0/classcore__courseformat_1_1base.html#a91ec7d57e8999fa9ea6107d531064e7d">get_form_start_date</a> ($mform, $fieldnames)</td></tr>
 <tr class="memdesc:a91ec7d57e8999fa9ea6107d531064e7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the start date value from the course settings page form.  <a href="../../d4/da0/classcore__courseformat_1_1base.html#a91ec7d57e8999fa9ea6107d531064e7d">More...</a><br /></td></tr>
 <tr class="separator:a91ec7d57e8999fa9ea6107d531064e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2be66f796328d96188963f8f280af226"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/da0/classcore__courseformat_1_1base.html#a2be66f796328d96188963f8f280af226">get_section_modules_updated</a> (<a class="el" href="../../d1/db5/classsection__info.html">section_info</a> $section)</td></tr>
+<tr class="memdesc:a2be66f796328d96188963f8f280af226"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return an array with all section modules content.  <a href="../../d4/da0/classcore__courseformat_1_1base.html#a2be66f796328d96188963f8f280af226">More...</a><br /></td></tr>
+<tr class="separator:a2be66f796328d96188963f8f280af226"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6659ff038d7ce8b42ae65553d16bd65e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/da0/classcore__courseformat_1_1base.html#a6659ff038d7ce8b42ae65553d16bd65e">update_format_options</a> ($data, $sectionid=null)</td></tr>
 <tr class="memdesc:a6659ff038d7ce8b42ae65553d16bd65e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates format options for a course or section.  <a href="../../d4/da0/classcore__courseformat_1_1base.html#a6659ff038d7ce8b42ae65553d16bd65e">More...</a><br /></td></tr>
 <tr class="separator:a6659ff038d7ce8b42ae65553d16bd65e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1574,6 +1577,47 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>$singlesection</b> = 0
 </dl>
 
 <p>Reimplemented in <a class="el" href="../../d5/d8d/classformat__weeks.html#a4a2c738048e9688d8c78cb96c5e3f294">format_weeks</a>.</p>
+
+</div>
+</div>
+<a id="a2be66f796328d96188963f8f280af226" name="a2be66f796328d96188963f8f280af226"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2be66f796328d96188963f8f280af226">&#9670;&nbsp;</a></span>get_section_modules_updated()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">core_courseformat\base::get_section_modules_updated </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/db5/classsection__info.html">section_info</a>&#160;</td>
+          <td class="paramname"><em>$section</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return an array with all section modules content. </p>
+<p >This method is used in section_action method to generate the updated modules content after a modinfo change.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype"><a class="el" href="../../d1/db5/classsection__info.html">section_info</a></td><td class="paramname">$section</td><td>the section </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">string[]</td><td>the full modules content. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -2871,7 +2915,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>$singlesection</b> = 0
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Mar 27 2022 02:37:47 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+Generated on Sun Apr 3 2022 02:46:18 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>
