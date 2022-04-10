@@ -25,7 +25,7 @@
   <td id="projectalign">
    <div id="projectname">Moodle PHP Documentation<span id="projectnumber">&#160;4.0</span>
    </div>
-   <div id="projectbrief">Moodle 4.0beta+ (Build: 20220401) (b5f51883)</div>
+   <div id="projectbrief">Moodle 4.0rc1 (Build: 20220408) (f62cd448)</div>
   </td>
  </tr>
  </tbody>
@@ -125,6 +125,10 @@ string const&#160;</td><td class="memItemRight" valign="bottom"><b>EVENT_CALLBAC
 string const&#160;</td><td class="memItemRight" valign="bottom"><b>EVENT_CREATE</b> = 'Create'</td></tr>
 <tr class="memdesc:a44e46db5f5d800087da5909d2994b3ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">The bigbluebuttonbn Create event. <br /></td></tr>
 <tr class="separator:a44e46db5f5d800087da5909d2994b3ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c0199602243333e946c8004f5d0b581"><td class="memItemLeft" align="right" valign="top"><a id="a0c0199602243333e946c8004f5d0b581" name="a0c0199602243333e946c8004f5d0b581"></a>
+string const&#160;</td><td class="memItemRight" valign="bottom"><b>EVENT_CREATE_MIGRATED</b> = 'create-migrated'</td></tr>
+<tr class="memdesc:a0c0199602243333e946c8004f5d0b581"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a specific log to mark this log as upgraded: used only in the upgrade process from 2.4. <br /></td></tr>
+<tr class="separator:a0c0199602243333e946c8004f5d0b581"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25181f0f77792df6435ab8d64a42e8af"><td class="memItemLeft" align="right" valign="top"><a id="a25181f0f77792df6435ab8d64a42e8af" name="a25181f0f77792df6435ab8d64a42e8af"></a>
 string const&#160;</td><td class="memItemRight" valign="bottom"><b>EVENT_DELETE</b> = 'Delete'</td></tr>
 <tr class="memdesc:a25181f0f77792df6435ab8d64a42e8af"><td class="mdescLeft">&#160;</td><td class="mdescRight">The bigbluebuttonbn Delete event. <br /></td></tr>
@@ -137,6 +141,9 @@ string const&#160;</td><td class="memItemRight" valign="bottom"><b>EVENT_EDIT</b
 string const&#160;</td><td class="memItemRight" valign="bottom"><b>EVENT_IMPORT</b> = 'Import'</td></tr>
 <tr class="memdesc:a5363451fb243e7f2ae98df38408700e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">The bigbluebuttonbn Import event. <br /></td></tr>
 <tr class="separator:a5363451fb243e7f2ae98df38408700e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a984d542a88c9f3b9dcd5ffa05601f339"><td class="memItemLeft" align="right" valign="top">string const&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/dbe/classmod__bigbluebuttonbn_1_1logger.html#a984d542a88c9f3b9dcd5ffa05601f339">EVENT_IMPORT_MIGRATED</a> = 'import-migrated'</td></tr>
+<tr class="memdesc:a984d542a88c9f3b9dcd5ffa05601f339"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a specific log to mark this log as upgraded: used only in the upgrade process from 2.4.  <a href="../../df/dbe/classmod__bigbluebuttonbn_1_1logger.html#a984d542a88c9f3b9dcd5ffa05601f339">More...</a><br /></td></tr>
+<tr class="separator:a984d542a88c9f3b9dcd5ffa05601f339"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae467b5ae997f543f07f9e2f0d1a80284"><td class="memItemLeft" align="right" valign="top"><a id="ae467b5ae997f543f07f9e2f0d1a80284" name="ae467b5ae997f543f07f9e2f0d1a80284"></a>
 string const&#160;</td><td class="memItemRight" valign="bottom"><b>EVENT_JOIN</b> = 'Join'</td></tr>
 <tr class="memdesc:ae467b5ae997f543f07f9e2f0d1a80284"><td class="mdescLeft">&#160;</td><td class="mdescRight">The bigbluebuttonbn Join event. <br /></td></tr>
@@ -1146,6 +1153,23 @@ Static Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a984d542a88c9f3b9dcd5ffa05601f339" name="a984d542a88c9f3b9dcd5ffa05601f339"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a984d542a88c9f3b9dcd5ffa05601f339">&#9670;&nbsp;</a></span>EVENT_IMPORT_MIGRATED</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">string const mod_bigbluebuttonbn\logger::EVENT_IMPORT_MIGRATED = 'import-migrated'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This is a specific log to mark this log as upgraded: used only in the upgrade process from 2.4. </p>
+<p >Note: Migrated event name change: once a log has been migrated we mark it as migrated by changing its log name. This will help to recover manually if we have an issue in the migration process. </p>
+
+</div>
+</div>
 <a id="aa9e67e354ecf85c11f80c6028e4f8902" name="aa9e67e354ecf85c11f80c6028e4f8902"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa9e67e354ecf85c11f80c6028e4f8902">&#9670;&nbsp;</a></span>LOG_TO_STRING</h2>
 
@@ -1179,7 +1203,7 @@ Static Protected Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 3 2022 02:46:36 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+Generated on Sun Apr 10 2022 02:50:24 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>

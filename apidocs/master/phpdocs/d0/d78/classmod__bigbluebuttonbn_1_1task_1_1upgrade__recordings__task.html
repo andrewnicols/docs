@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.3"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Moodle PHP Documentation: mod_bigbluebuttonbn\task\upgrade_recordings Class Reference</title>
+<title>Moodle PHP Documentation: mod_bigbluebuttonbn\task\upgrade_recordings_task Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -25,7 +25,7 @@
   <td id="projectalign">
    <div id="projectname">Moodle PHP Documentation<span id="projectnumber">&#160;4.0</span>
    </div>
-   <div id="projectbrief">Moodle 4.0beta+ (Build: 20220401) (b5f51883)</div>
+   <div id="projectbrief">Moodle 4.0rc1 (Build: 20220408) (f62cd448)</div>
   </td>
  </tr>
  </tbody>
@@ -53,35 +53,34 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../d3/d5b/namespacemod__bigbluebuttonbn.html">mod_bigbluebuttonbn</a></li><li class="navelem"><a class="el" href="../../d7/df0/namespacemod__bigbluebuttonbn_1_1task.html">task</a></li><li class="navelem"><a class="el" href="../../d5/dfc/classmod__bigbluebuttonbn_1_1task_1_1upgrade__recordings.html">upgrade_recordings</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../d3/d5b/namespacemod__bigbluebuttonbn.html">mod_bigbluebuttonbn</a></li><li class="navelem"><a class="el" href="../../d7/df0/namespacemod__bigbluebuttonbn_1_1task.html">task</a></li><li class="navelem"><a class="el" href="../../d0/d78/classmod__bigbluebuttonbn_1_1task_1_1upgrade__recordings__task.html">upgrade_recordings_task</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
-<a href="#pro-static-attribs">Static Protected Attributes</a> &#124;
-<a href="../../db/d3c/classmod__bigbluebuttonbn_1_1task_1_1upgrade__recordings-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">mod_bigbluebuttonbn\task\upgrade_recordings Class Reference<div class="ingroups"><a class="el" href="../../d9/d9b/group__mod__bigbluebuttonbn.html">mod_bigbluebuttonbn</a></div></div></div>
+<a href="../../dd/d2a/classmod__bigbluebuttonbn_1_1task_1_1upgrade__recordings__task-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">mod_bigbluebuttonbn\task\upgrade_recordings_task Class Reference<div class="ingroups"><a class="el" href="../../d9/d9b/group__mod__bigbluebuttonbn.html">mod_bigbluebuttonbn</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Inheritance diagram for mod_bigbluebuttonbn\task\upgrade_recordings:</div>
+Inheritance diagram for mod_bigbluebuttonbn\task\upgrade_recordings_task:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="../../d5/dfc/classmod__bigbluebuttonbn_1_1task_1_1upgrade__recordings.png" usemap="#mod_5Fbigbluebuttonbn_5Ctask_5Cupgrade_5Frecordings_map" alt=""/>
-  <map id="mod_5Fbigbluebuttonbn_5Ctask_5Cupgrade_5Frecordings_map" name="mod_5Fbigbluebuttonbn_5Ctask_5Cupgrade_5Frecordings_map">
-<area href="../../da/df6/classmod__bigbluebuttonbn_1_1task_1_1upgrade__recording__base__task.html" alt="mod_bigbluebuttonbn\task\upgrade_recording_base_task" shape="rect" coords="0,112,333,136"/>
-<area href="../../d4/d91/classcore_1_1task_1_1adhoc__task.html" title="Abstract class defining an adhoc task." alt="core\task\adhoc_task" shape="rect" coords="0,56,333,80"/>
-<area href="../../db/dfa/classcore_1_1task_1_1task__base.html" title="Abstract class for common properties of scheduled_task and adhoc_task." alt="core\task\task_base" shape="rect" coords="0,0,333,24"/>
+  <img src="../../d0/d78/classmod__bigbluebuttonbn_1_1task_1_1upgrade__recordings__task.png" usemap="#mod_5Fbigbluebuttonbn_5Ctask_5Cupgrade_5Frecordings_5Ftask_map" alt=""/>
+  <map id="mod_5Fbigbluebuttonbn_5Ctask_5Cupgrade_5Frecordings_5Ftask_map" name="mod_5Fbigbluebuttonbn_5Ctask_5Cupgrade_5Frecordings_5Ftask_map">
+<area href="../../d4/d91/classcore_1_1task_1_1adhoc__task.html" title="Abstract class defining an adhoc task." alt="core\task\adhoc_task" shape="rect" coords="0,56,305,80"/>
+<area href="../../db/dfa/classcore_1_1task_1_1task__base.html" title="Abstract class for common properties of scheduled_task and adhoc_task." alt="core\task\task_base" shape="rect" coords="0,0,305,24"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8e0d2a108b8117de0df2130dc6f703d0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df6/classmod__bigbluebuttonbn_1_1task_1_1upgrade__recording__base__task.html#a8e0d2a108b8117de0df2130dc6f703d0">execute</a> ()</td></tr>
-<tr class="memdesc:a8e0d2a108b8117de0df2130dc6f703d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the migration task.  <a href="../../da/df6/classmod__bigbluebuttonbn_1_1task_1_1upgrade__recording__base__task.html#a8e0d2a108b8117de0df2130dc6f703d0">More...</a><br /></td></tr>
-<tr class="separator:a8e0d2a108b8117de0df2130dc6f703d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a4a90edbab886c1482948f26a770a8b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d78/classmod__bigbluebuttonbn_1_1task_1_1upgrade__recordings__task.html#a5a4a90edbab886c1482948f26a770a8b">execute</a> ()</td></tr>
+<tr class="memdesc:a5a4a90edbab886c1482948f26a770a8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the migration task.  <a href="../../d0/d78/classmod__bigbluebuttonbn_1_1task_1_1upgrade__recordings__task.html#a5a4a90edbab886c1482948f26a770a8b">More...</a><br /></td></tr>
+<tr class="separator:a5a4a90edbab886c1482948f26a770a8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a239d98c229628eb668725f5983ce7f9e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/dfa/classcore_1_1task_1_1task__base.html#a239d98c229628eb668725f5983ce7f9e">get_component</a> ()</td></tr>
 <tr class="memdesc:a239d98c229628eb668725f5983ce7f9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for $component.  <a href="../../db/dfa/classcore_1_1task_1_1task__base.html#a239d98c229628eb668725f5983ce7f9e">More...</a><br /></td></tr>
 <tr class="separator:a239d98c229628eb668725f5983ce7f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -174,50 +173,38 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ad07a1c1557f0d19dd0afe4f63ba43b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter for $userid.  <a href="../../d4/d91/classcore_1_1task_1_1adhoc__task.html#ad07a1c1557f0d19dd0afe4f63ba43b4f">More...</a><br /></td></tr>
 <tr class="separator:ad07a1c1557f0d19dd0afe4f63ba43b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ad2876b40259522e10c331d95e35e8080"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d78/classmod__bigbluebuttonbn_1_1task_1_1upgrade__recordings__task.html#ad2876b40259522e10c331d95e35e8080">schedule_upgrade_per_meeting</a> ($importedrecordings=false)</td></tr>
+<tr class="memdesc:ad2876b40259522e10c331d95e35e8080"><td class="mdescLeft">&#160;</td><td class="mdescRight">Schedule all upgrading tasks.  <a href="../../d0/d78/classmod__bigbluebuttonbn_1_1task_1_1upgrade__recordings__task.html#ad2876b40259522e10c331d95e35e8080">More...</a><br /></td></tr>
+<tr class="separator:ad2876b40259522e10c331d95e35e8080"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
 <tr class="memitem:af824e83aef69dbb6211aea9604744669"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/d91/classcore_1_1task_1_1adhoc__task.html#af824e83aef69dbb6211aea9604744669">get_default_concurrency_limit</a> ()</td></tr>
 <tr class="memdesc:af824e83aef69dbb6211aea9604744669"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns default concurrency limit for this task.  <a href="../../d4/d91/classcore_1_1task_1_1adhoc__task.html#af824e83aef69dbb6211aea9604744669">More...</a><br /></td></tr>
 <tr class="separator:af824e83aef69dbb6211aea9604744669"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec95138778fe2675f0f6a67c77881e01"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df6/classmod__bigbluebuttonbn_1_1task_1_1upgrade__recording__base__task.html#aec95138778fe2675f0f6a67c77881e01">get_imported_data</a> (array $<a class="el" href="../../df/d0d/classmod__bigbluebuttonbn_1_1recording.html">recording</a>)</td></tr>
-<tr class="memdesc:aec95138778fe2675f0f6a67c77881e01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the imported data for a recording.  <a href="../../da/df6/classmod__bigbluebuttonbn_1_1task_1_1upgrade__recording__base__task.html#aec95138778fe2675f0f6a67c77881e01">More...</a><br /></td></tr>
-<tr class="separator:aec95138778fe2675f0f6a67c77881e01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6cf6a020e229a709070992a45b5e7c0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/dfc/classmod__bigbluebuttonbn_1_1task_1_1upgrade__recordings.html#ad6cf6a020e229a709070992a45b5e7c0">get_logs_to_convert</a> ()</td></tr>
-<tr class="memdesc:ad6cf6a020e229a709070992a45b5e7c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the list of logs to convert.  <a href="../../d5/dfc/classmod__bigbluebuttonbn_1_1task_1_1upgrade__recordings.html#ad6cf6a020e229a709070992a45b5e7c0">More...</a><br /></td></tr>
-<tr class="separator:ad6cf6a020e229a709070992a45b5e7c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc1b8efa42bcd43cc28a0ad01ff47e4c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/df6/classmod__bigbluebuttonbn_1_1task_1_1upgrade__recording__base__task.html#acc1b8efa42bcd43cc28a0ad01ff47e4c">process_bigbluebuttonbn_logs</a> ()</td></tr>
-<tr class="memdesc:acc1b8efa42bcd43cc28a0ad01ff47e4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process all bigbluebuttonbn logs looking for entries which should be converted to meetings.  <a href="../../da/df6/classmod__bigbluebuttonbn_1_1task_1_1upgrade__recording__base__task.html#acc1b8efa42bcd43cc28a0ad01ff47e4c">More...</a><br /></td></tr>
-<tr class="separator:acc1b8efa42bcd43cc28a0ad01ff47e4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-static-attribs" name="pro-static-attribs"></a>
-Static Protected Attributes</h2></td></tr>
-<tr class="memitem:ac79bc28349c6d18419c955181708a0de"><td class="memItemLeft" align="right" valign="top"><a id="ac79bc28349c6d18419c955181708a0de" name="ac79bc28349c6d18419c955181708a0de"></a>
-static int&#160;</td><td class="memItemRight" valign="bottom"><b>$chunksize</b> = 50</td></tr>
-<tr class="memdesc:ac79bc28349c6d18419c955181708a0de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chunk size to use when fetching recording. <br /></td></tr>
-<tr class="separator:ac79bc28349c6d18419c955181708a0de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99988a266b768732443dc80ee00d5e98"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d78/classmod__bigbluebuttonbn_1_1task_1_1upgrade__recordings__task.html#a99988a266b768732443dc80ee00d5e98">get_sql_query_for_logs</a> (string $meetingid, bool $isimported)</td></tr>
+<tr class="memdesc:a99988a266b768732443dc80ee00d5e98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the query (records_select) for the logs to convert.  <a href="../../d0/d78/classmod__bigbluebuttonbn_1_1task_1_1upgrade__recordings__task.html#a99988a266b768732443dc80ee00d5e98">More...</a><br /></td></tr>
+<tr class="separator:a99988a266b768732443dc80ee00d5e98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99aef6c7df65eb2b4ca802fc7128fa51"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d78/classmod__bigbluebuttonbn_1_1task_1_1upgrade__recordings__task.html#a99aef6c7df65eb2b4ca802fc7128fa51">process_bigbluebuttonbn_logs</a> (string $meetingid, bool $isimported)</td></tr>
+<tr class="memdesc:a99aef6c7df65eb2b4ca802fc7128fa51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process all bigbluebuttonbn logs looking for entries which should be converted to meetings.  <a href="../../d0/d78/classmod__bigbluebuttonbn_1_1task_1_1upgrade__recordings__task.html#a99aef6c7df65eb2b4ca802fc7128fa51">More...</a><br /></td></tr>
+<tr class="separator:a99aef6c7df65eb2b4ca802fc7128fa51"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8e0d2a108b8117de0df2130dc6f703d0" name="a8e0d2a108b8117de0df2130dc6f703d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e0d2a108b8117de0df2130dc6f703d0">&#9670;&nbsp;</a></span>execute()</h2>
+<a id="a5a4a90edbab886c1482948f26a770a8b" name="a5a4a90edbab886c1482948f26a770a8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a4a90edbab886c1482948f26a770a8b">&#9670;&nbsp;</a></span>execute()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">mod_bigbluebuttonbn\task\upgrade_recording_base_task::execute </td>
+          <td class="memname">mod_bigbluebuttonbn\task\upgrade_recordings_task::execute </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Run the migration task. </p>
@@ -523,48 +510,6 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><b>$chunksize</b> 
 
 </div>
 </div>
-<a id="aec95138778fe2675f0f6a67c77881e01" name="aec95138778fe2675f0f6a67c77881e01"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec95138778fe2675f0f6a67c77881e01">&#9670;&nbsp;</a></span>get_imported_data()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">mod_bigbluebuttonbn\task\upgrade_recording_base_task::get_imported_data </td>
-          <td>(</td>
-          <td class="paramtype">array&#160;</td>
-          <td class="paramname"><em>$recording</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Fetch the imported data for a recording. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramtype">array</td><td class="paramname">$recording</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">string</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Reimplemented in <a class="el" href="../../d9/db4/classmod__bigbluebuttonbn_1_1task_1_1upgrade__imported__recordings.html#a1912e6a5247c9d65cd8899fe5758a1fd">mod_bigbluebuttonbn\task\upgrade_imported_recordings</a>.</p>
-
-</div>
-</div>
 <a id="af9ac8c7f646f06ba815bb4300378b687" name="af9ac8c7f646f06ba815bb4300378b687"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af9ac8c7f646f06ba815bb4300378b687">&#9670;&nbsp;</a></span>get_lock()</h2>
 
@@ -595,41 +540,6 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><b>$chunksize</b> 
   </table>
   </dd>
 </dl>
-
-</div>
-</div>
-<a id="ad6cf6a020e229a709070992a45b5e7c0" name="ad6cf6a020e229a709070992a45b5e7c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6cf6a020e229a709070992a45b5e7c0">&#9670;&nbsp;</a></span>get_logs_to_convert()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">mod_bigbluebuttonbn\task\upgrade_recordings::get_logs_to_convert </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the list of logs to convert. </p>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">array</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Reimplemented from <a class="el" href="../../da/df6/classmod__bigbluebuttonbn_1_1task_1_1upgrade__recording__base__task.html#abe8dd42dbd6be5afd307312c5aaef84c">mod_bigbluebuttonbn\task\upgrade_recording_base_task</a>.</p>
 
 </div>
 </div>
@@ -693,6 +603,64 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><b>$chunksize</b> 
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">int</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a99988a266b768732443dc80ee00d5e98" name="a99988a266b768732443dc80ee00d5e98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99988a266b768732443dc80ee00d5e98">&#9670;&nbsp;</a></span>get_sql_query_for_logs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">mod_bigbluebuttonbn\task\upgrade_recordings_task::get_sql_query_for_logs </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>$meetingid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>$isimported</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the query (records_select) for the logs to convert. </p>
+<p >Each log is ordered by timecreated.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$meetingid</td><td></td></tr>
+    <tr><td class="paramtype">bool</td><td class="paramname">$isimported</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">array</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d5/d5c/classdml__exception.html">dml_exception</a></td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -831,8 +799,8 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><b>$chunksize</b> 
 
 </div>
 </div>
-<a id="acc1b8efa42bcd43cc28a0ad01ff47e4c" name="acc1b8efa42bcd43cc28a0ad01ff47e4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc1b8efa42bcd43cc28a0ad01ff47e4c">&#9670;&nbsp;</a></span>process_bigbluebuttonbn_logs()</h2>
+<a id="a99aef6c7df65eb2b4ca802fc7128fa51" name="a99aef6c7df65eb2b4ca802fc7128fa51"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99aef6c7df65eb2b4ca802fc7128fa51">&#9670;&nbsp;</a></span>process_bigbluebuttonbn_logs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -841,23 +809,95 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><b>$chunksize</b> 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">mod_bigbluebuttonbn\task\upgrade_recording_base_task::process_bigbluebuttonbn_logs </td>
+          <td class="memname">mod_bigbluebuttonbn\task\upgrade_recordings_task::process_bigbluebuttonbn_logs </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>$meetingid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>$isimported</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>Process all bigbluebuttonbn logs looking for entries which should be converted to meetings. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">string</td><td class="paramname">$meetingid</td><td></td></tr>
+    <tr><td class="paramtype">bool</td><td class="paramname">$isimported</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">bool</td><td>Whether any more logs are waiting to be processed </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d5/d5c/classdml__exception.html">dml_exception</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d6/da8/classmoodle__exception.html" title="Base Moodle Exception class.">moodle_exception</a></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ad2876b40259522e10c331d95e35e8080" name="ad2876b40259522e10c331d95e35e8080"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2876b40259522e10c331d95e35e8080">&#9670;&nbsp;</a></span>schedule_upgrade_per_meeting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static mod_bigbluebuttonbn\task\upgrade_recordings_task::schedule_upgrade_per_meeting </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$importedrecordings</em> = <code>false</code></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Schedule all upgrading tasks. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">bool</td><td class="paramname">$importedrecordings</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">void</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../da/d34/classcoding__exception.html" title="Exception indicating programming error, must be fixed by a programer.">coding_exception</a></td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="../../d5/d5c/classdml__exception.html">dml_exception</a></td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -1341,12 +1381,12 @@ static int&#160;</td><td class="memItemRight" valign="bottom"><b>$chunksize</b> 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>mod/bigbluebuttonbn/classes/task/upgrade_recordings.php</li>
+<li>mod/bigbluebuttonbn/classes/task/upgrade_recordings_task.php</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 3 2022 02:46:39 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+Generated on Sun Apr 10 2022 02:50:26 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>

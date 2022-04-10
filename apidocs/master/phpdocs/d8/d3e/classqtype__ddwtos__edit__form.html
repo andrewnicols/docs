@@ -25,7 +25,7 @@
   <td id="projectalign">
    <div id="projectname">Moodle PHP Documentation<span id="projectnumber">&#160;4.0</span>
    </div>
-   <div id="projectbrief">Moodle 4.0beta+ (Build: 20220401) (b5f51883)</div>
+   <div id="projectbrief">Moodle 4.0rc1 (Build: 20220408) (f62cd448)</div>
   </td>
  </tr>
  </tbody>
@@ -274,6 +274,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a02a021a95313eae7dc483c4e21cdf89b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d44/classqtype__gapselect__edit__form__base.html#a02a021a95313eae7dc483c4e21cdf89b">definition_inner</a> ($mform)</td></tr>
 <tr class="memdesc:a02a021a95313eae7dc483c4e21cdf89b"><td class="mdescLeft">&#160;</td><td class="mdescRight">definition_inner adds all specific fields to the form.  <a href="../../db/d44/classqtype__gapselect__edit__form__base.html#a02a021a95313eae7dc483c4e21cdf89b">More...</a><br /></td></tr>
 <tr class="separator:a02a021a95313eae7dc483c4e21cdf89b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a265261dc1734a1e538300430b4e27790"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d3e/classqtype__ddwtos__edit__form.html#a265261dc1734a1e538300430b4e27790">extra_slot_validation</a> (array $slots, array $choices)</td></tr>
+<tr class="memdesc:a265261dc1734a1e538300430b4e27790"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds more errors in question slots.  <a href="../../d8/d3e/classqtype__ddwtos__edit__form.html#a265261dc1734a1e538300430b4e27790">More...</a><br /></td></tr>
+<tr class="separator:a265261dc1734a1e538300430b4e27790"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87ff3ae1b2bcec06efb04bbaed1d776a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/db1/classmoodleform.html#a87ff3ae1b2bcec06efb04bbaed1d776a">get_array_value_by_keys</a> (array $array, array $keys)</td></tr>
 <tr class="memdesc:a87ff3ae1b2bcec06efb04bbaed1d776a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an element of multi-dimensional array given the list of keys.  <a href="../../d8/db1/classmoodleform.html#a87ff3ae1b2bcec06efb04bbaed1d776a">More...</a><br /></td></tr>
 <tr class="separator:a87ff3ae1b2bcec06efb04bbaed1d776a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1303,6 +1306,59 @@ object&#160;</td><td class="memItemRight" valign="bottom"><b>$question</b></td><
 <p>Print html form. </p>
 
 <p>Reimplemented in <a class="el" href="../../d3/d67/classbase__moodleform.html#ada02d0a25f1dbee2f49f007d2ac2472e">base_moodleform</a>, <a class="el" href="../../da/dd0/classcohort__upload__form.html#a491ba1f7a59a175ee98a7f4fcd0232d9">cohort_upload_form</a>, and <a class="el" href="../../d2/d64/classmod__feedback__complete__form.html#ac58b687613dc84e31e8ecd5474e9105a">mod_feedback_complete_form</a>.</p>
+
+</div>
+</div>
+<a id="a265261dc1734a1e538300430b4e27790" name="a265261dc1734a1e538300430b4e27790"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a265261dc1734a1e538300430b4e27790">&#9670;&nbsp;</a></span>extra_slot_validation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">qtype_ddwtos_edit_form::extra_slot_validation </td>
+          <td>(</td>
+          <td class="paramtype">array&#160;</td>
+          <td class="paramname"><em>$slots</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">array&#160;</td>
+          <td class="paramname"><em>$choices</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Finds more errors in question slots. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">array</td><td class="paramname">$slots</td><td>The question text </td></tr>
+    <tr><td class="paramtype">array</td><td class="paramname">$choices</td><td>Question choices </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">string|null</td><td>Error message or false if no errors </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="../../db/d44/classqtype__gapselect__edit__form__base.html#a4212e1333c70b3d72cba6092a726216a">qtype_gapselect_edit_form_base</a>.</p>
 
 </div>
 </div>
@@ -3248,7 +3304,7 @@ object&#160;</td><td class="memItemRight" valign="bottom"><b>$question</b></td><
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 3 2022 02:45:29 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+Generated on Sun Apr 10 2022 02:49:01 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>

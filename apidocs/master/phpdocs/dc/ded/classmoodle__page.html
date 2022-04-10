@@ -25,7 +25,7 @@
   <td id="projectalign">
    <div id="projectname">Moodle PHP Documentation<span id="projectnumber">&#160;4.0</span>
    </div>
-   <div id="projectbrief">Moodle 4.0beta+ (Build: 20220401) (b5f51883)</div>
+   <div id="projectbrief">Moodle 4.0rc1 (Build: 20220408) (f62cd448)</div>
   </td>
  </tr>
  </tbody>
@@ -99,6 +99,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a43bfafd26210f4aa8ef1d36a70005b2c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/ded/classmoodle__page.html#a43bfafd26210f4aa8ef1d36a70005b2c">ensure_param_not_in_url</a> ($param)</td></tr>
 <tr class="memdesc:a43bfafd26210f4aa8ef1d36a70005b2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make sure page URL does not contain the given URL parameter.  <a href="../../dc/ded/classmoodle__page.html#a43bfafd26210f4aa8ef1d36a70005b2c">More...</a><br /></td></tr>
 <tr class="separator:a43bfafd26210f4aa8ef1d36a70005b2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cf900e4a8a1298b48103dc5e7d6c941"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/ded/classmoodle__page.html#a8cf900e4a8a1298b48103dc5e7d6c941">force_lock_all_blocks</a> ()</td></tr>
+<tr class="memdesc:a8cf900e4a8a1298b48103dc5e7d6c941"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove access to editing/moving on all blocks on a page.  <a href="../../dc/ded/classmoodle__page.html#a8cf900e4a8a1298b48103dc5e7d6c941">More...</a><br /></td></tr>
+<tr class="separator:a8cf900e4a8a1298b48103dc5e7d6c941"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13e43f07734993199d96d1aaf4ff68ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/ded/classmoodle__page.html#a13e43f07734993199d96d1aaf4ff68ec">force_settings_menu</a> ($forced=true)</td></tr>
 <tr class="memdesc:a13e43f07734993199d96d1aaf4ff68ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Force the settings menu to be displayed on this page.  <a href="../../dc/ded/classmoodle__page.html#a13e43f07734993199d96d1aaf4ff68ec">More...</a><br /></td></tr>
 <tr class="separator:a13e43f07734993199d96d1aaf4ff68ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -497,6 +500,10 @@ array&#160;</td><td class="memItemRight" valign="bottom"><b>$_bodyclasses</b> = 
 string&#160;</td><td class="memItemRight" valign="bottom"><b>$_focuscontrol</b> = ''</td></tr>
 <tr class="memdesc:a43e38d5134893f37f15af0d399b75354"><td class="mdescLeft">&#160;</td><td class="mdescRight">Can be set to the ID of an element on the page, if done that element receives focus when the page loads. <br /></td></tr>
 <tr class="separator:a43e38d5134893f37f15af0d399b75354"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa33ae30d9eaee3804080a555cc6c0bf0"><td class="memItemLeft" align="right" valign="top"><a id="aa33ae30d9eaee3804080a555cc6c0bf0" name="aa33ae30d9eaee3804080a555cc6c0bf0"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>$_forcelockallblocks</b> = false</td></tr>
+<tr class="memdesc:aa33ae30d9eaee3804080a555cc6c0bf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to override/remove all editing capabilities for blocks on the page. <br /></td></tr>
+<tr class="separator:aa33ae30d9eaee3804080a555cc6c0bf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79e5e8bf2b15a892ca0e6b40a772fbc1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/ded/classmoodle__page.html#a79e5e8bf2b15a892ca0e6b40a772fbc1">$_forcesettingsmenu</a> = false</td></tr>
 <tr class="memdesc:a79e5e8bf2b15a892ca0e6b40a772fbc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is the settings menu being forced to display on this page (activities / resources only).  <a href="../../dc/ded/classmoodle__page.html#a79e5e8bf2b15a892ca0e6b40a772fbc1">More...</a><br /></td></tr>
 <tr class="separator:a79e5e8bf2b15a892ca0e6b40a772fbc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1095,6 +1102,32 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>$_subpage</b> = ''<
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname"><a class="el" href="../../da/d34/classcoding__exception.html" title="Exception indicating programming error, must be fixed by a programer.">coding_exception</a></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8cf900e4a8a1298b48103dc5e7d6c941" name="a8cf900e4a8a1298b48103dc5e7d6c941"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cf900e4a8a1298b48103dc5e7d6c941">&#9670;&nbsp;</a></span>force_lock_all_blocks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">moodle_page::force_lock_all_blocks </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove access to editing/moving on all blocks on a page. </p>
+<p >This overrides any capabilities and is intended only for pages where no user (including admins) should be able to modify blocks on the page (eg My Courses).</p>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">void</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -4099,6 +4132,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>$_subpage</b> = ''<
 </div><div class="memdoc">
 
 <p>Does the user have permission to edit blocks on this page. </p>
+<p >Can be forced to false by calling the <a class="el" href="../../dc/ded/classmoodle__page.html#a8cf900e4a8a1298b48103dc5e7d6c941" title="Remove access to editing/moving on all blocks on a page.">force_lock_all_blocks()</a> method.</p>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">bool</td><td></td></tr>
@@ -4733,7 +4767,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>$_subpage</b> = ''<
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 3 2022 02:45:23 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+Generated on Sun Apr 10 2022 02:48:54 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>

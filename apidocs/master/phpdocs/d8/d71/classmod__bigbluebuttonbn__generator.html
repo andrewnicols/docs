@@ -25,7 +25,7 @@
   <td id="projectalign">
    <div id="projectname">Moodle PHP Documentation<span id="projectnumber">&#160;4.0</span>
    </div>
-   <div id="projectbrief">Moodle 4.0beta+ (Build: 20220401) (b5f51883)</div>
+   <div id="projectbrief">Moodle 4.0rc1 (Build: 20220408) (f62cd448)</div>
   </td>
  </tr>
  </tbody>
@@ -86,9 +86,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9f54bfd7e4726b0d8500668d550fc2a8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d71/classmod__bigbluebuttonbn__generator.html#a9f54bfd7e4726b0d8500668d550fc2a8">create_meeting</a> (array $data)</td></tr>
 <tr class="memdesc:a9f54bfd7e4726b0d8500668d550fc2a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mock an in-progress meeting on the remote server.  <a href="../../d8/d71/classmod__bigbluebuttonbn__generator.html#a9f54bfd7e4726b0d8500668d550fc2a8">More...</a><br /></td></tr>
 <tr class="separator:a9f54bfd7e4726b0d8500668d550fc2a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a092d887a02a3085749b83feb08c3ad5c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d71/classmod__bigbluebuttonbn__generator.html#a092d887a02a3085749b83feb08c3ad5c">create_recording</a> (array $data)</td></tr>
-<tr class="memdesc:a092d887a02a3085749b83feb08c3ad5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a recording for the given bbb activity.  <a href="../../d8/d71/classmod__bigbluebuttonbn__generator.html#a092d887a02a3085749b83feb08c3ad5c">More...</a><br /></td></tr>
-<tr class="separator:a092d887a02a3085749b83feb08c3ad5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bc99bdb744de385c63f88d3b156347f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d71/classmod__bigbluebuttonbn__generator.html#a5bc99bdb744de385c63f88d3b156347f">create_recording</a> (array $data, $serveronly=false)</td></tr>
+<tr class="memdesc:a5bc99bdb744de385c63f88d3b156347f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a recording for the given bbb activity.  <a href="../../d8/d71/classmod__bigbluebuttonbn__generator.html#a5bc99bdb744de385c63f88d3b156347f">More...</a><br /></td></tr>
+<tr class="separator:a5bc99bdb744de385c63f88d3b156347f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa0ec937c895f79994637e6cc9166f05"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dce/classtesting__module__generator.html#afa0ec937c895f79994637e6cc9166f05">get_modulename</a> ()</td></tr>
 <tr class="memdesc:afa0ec937c895f79994637e6cc9166f05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns module name.  <a href="../../d6/dce/classtesting__module__generator.html#afa0ec937c895f79994637e6cc9166f05">More...</a><br /></td></tr>
 <tr class="separator:afa0ec937c895f79994637e6cc9166f05"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -372,8 +372,8 @@ number&#160;</td><td class="memItemRight" valign="bottom"><b>$instancecount</b> 
 
 </div>
 </div>
-<a id="a092d887a02a3085749b83feb08c3ad5c" name="a092d887a02a3085749b83feb08c3ad5c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a092d887a02a3085749b83feb08c3ad5c">&#9670;&nbsp;</a></span>create_recording()</h2>
+<a id="a5bc99bdb744de385c63f88d3b156347f" name="a5bc99bdb744de385c63f88d3b156347f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bc99bdb744de385c63f88d3b156347f">&#9670;&nbsp;</a></span>create_recording()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -382,8 +382,18 @@ number&#160;</td><td class="memItemRight" valign="bottom"><b>$instancecount</b> 
           <td class="memname">mod_bigbluebuttonbn_generator::create_recording </td>
           <td>(</td>
           <td class="paramtype">array&#160;</td>
-          <td class="paramname"><em>$data</em></td><td>)</td>
+          <td class="paramname"><em>$data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$serveronly</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -393,6 +403,7 @@ number&#160;</td><td class="memItemRight" valign="bottom"><b>$instancecount</b> 
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramtype">array</td><td class="paramname">$data</td><td></td></tr>
+    <tr><td class="paramtype">bool</td><td class="paramname">$serveronly</td><td>create it only on the server, not in the database. </td></tr>
   </table>
   </dd>
 </dl>
@@ -833,7 +844,13 @@ number&#160;</td><td class="memItemRight" valign="bottom"><b>$instancecount</b> 
 </dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">SimpleXMLElement</td><td></td></tr>
+    <tr><td class="paramname">SimpleXMLElement|bool</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="../../d6/da8/classmoodle__exception.html" title="Base Moodle Exception class.">moodle_exception</a></td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -881,7 +898,7 @@ number&#160;</td><td class="memItemRight" valign="bottom"><b>$instancecount</b> 
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 3 2022 02:45:18 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+Generated on Sun Apr 10 2022 02:48:48 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>
