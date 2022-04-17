@@ -25,7 +25,7 @@
   <td id="projectalign">
    <div id="projectname">Moodle PHP Documentation<span id="projectnumber">&#160;4.0</span>
    </div>
-   <div id="projectbrief">Moodle 4.0rc1 (Build: 20220408) (f62cd448)</div>
+   <div id="projectbrief">Moodle 4.0rc4 (Build: 20220416) (f8011897)</div>
   </td>
  </tr>
  </tbody>
@@ -157,9 +157,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af89af833b111b195dafd63f8f548653b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d5b/classmod__quiz_1_1output_1_1edit__renderer.html#af89af833b111b195dafd63f8f548653b">question_number</a> ($number)</td></tr>
 <tr class="memdesc:af89af833b111b195dafd63f8f548653b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Output the question number.  <a href="../../dd/d5b/classmod__quiz_1_1output_1_1edit__renderer.html#af89af833b111b195dafd63f8f548653b">More...</a><br /></td></tr>
 <tr class="separator:af89af833b111b195dafd63f8f548653b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a043e0dabcbbd28c717a7c224d968fbfe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d5b/classmod__quiz_1_1output_1_1edit__renderer.html#a043e0dabcbbd28c717a7c224d968fbfe">question_preview_icon</a> ($<a class="el" href="../../dc/d8f/classquiz.html">quiz</a>, $<a class="el" href="../../dd/d5b/classmod__quiz_1_1output_1_1edit__renderer.html#a69df9d63dd5532a56a9ff99faea46299">question</a>, $label=null, $variant=null, $qtype=null)</td></tr>
-<tr class="memdesc:a043e0dabcbbd28c717a7c224d968fbfe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render the preview icon.  <a href="../../dd/d5b/classmod__quiz_1_1output_1_1edit__renderer.html#a043e0dabcbbd28c717a7c224d968fbfe">More...</a><br /></td></tr>
-<tr class="separator:a043e0dabcbbd28c717a7c224d968fbfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1afaac5eb652abc38394c99afd534fe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d5b/classmod__quiz_1_1output_1_1edit__renderer.html#aa1afaac5eb652abc38394c99afd534fe">question_preview_icon</a> ($<a class="el" href="../../dc/d8f/classquiz.html">quiz</a>, $questiondata, $label=null, $variant=null)</td></tr>
+<tr class="memdesc:aa1afaac5eb652abc38394c99afd534fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render the preview icon.  <a href="../../dd/d5b/classmod__quiz_1_1output_1_1edit__renderer.html#aa1afaac5eb652abc38394c99afd534fe">More...</a><br /></td></tr>
+<tr class="separator:aa1afaac5eb652abc38394c99afd534fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7fb53a4587175ef689f1f8e8eb48344"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d5b/classmod__quiz_1_1output_1_1edit__renderer.html#ab7fb53a4587175ef689f1f8e8eb48344">question_remove_icon</a> (<a class="el" href="../../d1/d5e/classmod__quiz_1_1structure.html">structure</a> $<a class="el" href="../../d1/d5e/classmod__quiz_1_1structure.html">structure</a>, $slot, $pageurl)</td></tr>
 <tr class="memdesc:ab7fb53a4587175ef689f1f8e8eb48344"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render an icon to remove a question from the quiz.  <a href="../../dd/d5b/classmod__quiz_1_1output_1_1edit__renderer.html#ab7fb53a4587175ef689f1f8e8eb48344">More...</a><br /></td></tr>
 <tr class="separator:ab7fb53a4587175ef689f1f8e8eb48344"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1832,8 +1832,8 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>$togglegroup</b> = 
 
 </div>
 </div>
-<a id="a043e0dabcbbd28c717a7c224d968fbfe" name="a043e0dabcbbd28c717a7c224d968fbfe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a043e0dabcbbd28c717a7c224d968fbfe">&#9670;&nbsp;</a></span>question_preview_icon()</h2>
+<a id="aa1afaac5eb652abc38394c99afd534fe" name="aa1afaac5eb652abc38394c99afd534fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1afaac5eb652abc38394c99afd534fe">&#9670;&nbsp;</a></span>question_preview_icon()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1848,7 +1848,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>$togglegroup</b> = 
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$question</em>, </td>
+          <td class="paramname"><em>$questiondata</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1860,13 +1860,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>$togglegroup</b> = 
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$variant</em> = <code>null</code>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$qtype</em> = <code>null</code>&#160;</td>
+          <td class="paramname"><em>$variant</em> = <code>null</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1880,10 +1874,9 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>$togglegroup</b> = 
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramtype">stdClass</td><td class="paramname">$quiz</td><td>the quiz settings from the database. </td></tr>
-    <tr><td class="paramtype">stdClass</td><td class="paramname">$question</td><td>data from the question and quiz_slots tables. </td></tr>
+    <tr><td class="paramtype">stdClass</td><td class="paramname">$questiondata</td><td>which question to preview. If -&gt;questionid is set, that is used instead of -&gt;id. </td></tr>
     <tr><td class="paramtype">bool</td><td class="paramname">$label</td><td>if true, show the preview question label after the icon </td></tr>
     <tr><td class="paramtype">int</td><td class="paramname">$variant</td><td>which question variant to preview (optional). </td></tr>
-    <tr><td class="paramtype">string</td><td class="paramname">$qtype</td><td>the type of question </td></tr>
   </table>
   </dd>
 </dl>
@@ -2806,7 +2799,7 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>$togglegroup</b> = 
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 10 2022 02:50:41 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+Generated on Sun Apr 17 2022 02:49:30 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>

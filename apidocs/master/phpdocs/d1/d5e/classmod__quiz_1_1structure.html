@@ -25,7 +25,7 @@
   <td id="projectalign">
    <div id="projectname">Moodle PHP Documentation<span id="projectnumber">&#160;4.0</span>
    </div>
-   <div id="projectbrief">Moodle 4.0rc1 (Build: 20220408) (f62cd448)</div>
+   <div id="projectbrief">Moodle 4.0rc4 (Build: 20220416) (f8011897)</div>
   </td>
  </tr>
  </tbody>
@@ -180,6 +180,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aeaa707e6ad5db5bebd2f4061ecdab90c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d5e/classmod__quiz_1_1structure.html#aeaa707e6ad5db5bebd2f4061ecdab90c">get_slots_in_section</a> ($sectionid)</td></tr>
 <tr class="memdesc:aeaa707e6ad5db5bebd2f4061ecdab90c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all the slots in a section of the quiz.  <a href="../../d1/d5e/classmod__quiz_1_1structure.html#aeaa707e6ad5db5bebd2f4061ecdab90c">More...</a><br /></td></tr>
 <tr class="separator:aeaa707e6ad5db5bebd2f4061ecdab90c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7c1e2e70fe407e1c71e19726a1a59e3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d5e/classmod__quiz_1_1structure.html#ac7c1e2e70fe407e1c71e19726a1a59e3">get_version_choices_for_slot</a> (int $slotnumber)</td></tr>
+<tr class="memdesc:ac7c1e2e70fe407e1c71e19726a1a59e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the version options to show on the Questions page for a particular question.  <a href="../../d1/d5e/classmod__quiz_1_1structure.html#ac7c1e2e70fe407e1c71e19726a1a59e3">More...</a><br /></td></tr>
+<tr class="separator:ac7c1e2e70fe407e1c71e19726a1a59e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd49e117d3d28fcd368046c80da2e6e6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d5e/classmod__quiz_1_1structure.html#abd49e117d3d28fcd368046c80da2e6e6">has_questions</a> ()</td></tr>
 <tr class="memdesc:abd49e117d3d28fcd368046c80da2e6e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether there are any questions in the quiz.  <a href="../../d1/d5e/classmod__quiz_1_1structure.html#abd49e117d3d28fcd368046c80da2e6e6">More...</a><br /></td></tr>
 <tr class="separator:abd49e117d3d28fcd368046c80da2e6e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -220,9 +223,6 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>populate_slots_with_sections</b> ()</td></tr>
 <tr class="memdesc:adb732deb2d46431a87e7e3d865d3a653"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fill in the section ids for each slot. <br /></td></tr>
 <tr class="separator:adb732deb2d46431a87e7e3d865d3a653"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf7be78418cfdd4c11f3b5b803f6261c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d5e/classmod__quiz_1_1structure.html#acf7be78418cfdd4c11f3b5b803f6261c">populate_structure</a> ($<a class="el" href="../../dc/d8f/classquiz.html">quiz</a>)</td></tr>
-<tr class="memdesc:acf7be78418cfdd4c11f3b5b803f6261c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up this class with the structure for a given quiz.  <a href="../../d1/d5e/classmod__quiz_1_1structure.html#acf7be78418cfdd4c11f3b5b803f6261c">More...</a><br /></td></tr>
-<tr class="separator:acf7be78418cfdd4c11f3b5b803f6261c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a107443e4475b3aa71956ffabc8f2f3ac"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d5e/classmod__quiz_1_1structure.html#a107443e4475b3aa71956ffabc8f2f3ac">refresh_page_numbers</a> ($slots=array())</td></tr>
 <tr class="memdesc:a107443e4475b3aa71956ffabc8f2f3ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refresh page numbering of quiz slots.  <a href="../../d1/d5e/classmod__quiz_1_1structure.html#a107443e4475b3aa71956ffabc8f2f3ac">More...</a><br /></td></tr>
 <tr class="separator:a107443e4475b3aa71956ffabc8f2f3ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -265,13 +265,14 @@ Static Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a158a5bd89f19cfffaa44cb0b0ef92102"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d5e/classmod__quiz_1_1structure.html#a158a5bd89f19cfffaa44cb0b0ef92102">populate_missing_questions</a> ($slots)</td></tr>
-<tr class="memdesc:a158a5bd89f19cfffaa44cb0b0ef92102"><td class="mdescLeft">&#160;</td><td class="mdescRight">Used by populate.  <a href="../../d1/d5e/classmod__quiz_1_1structure.html#a158a5bd89f19cfffaa44cb0b0ef92102">More...</a><br /></td></tr>
-<tr class="separator:a158a5bd89f19cfffaa44cb0b0ef92102"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afdc349f179225ef027324a8d8469dfef"><td class="memItemLeft" align="right" valign="top"><a id="afdc349f179225ef027324a8d8469dfef" name="afdc349f179225ef027324a8d8469dfef"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>populate_question_numbers</b> ()</td></tr>
 <tr class="memdesc:afdc349f179225ef027324a8d8469dfef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number the questions. <br /></td></tr>
 <tr class="separator:afdc349f179225ef027324a8d8469dfef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b0fc3d35f6e38a382640ce124726902"><td class="memItemLeft" align="right" valign="top"><a id="a4b0fc3d35f6e38a382640ce124726902" name="a4b0fc3d35f6e38a382640ce124726902"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>populate_structure</b> ()</td></tr>
+<tr class="memdesc:a4b0fc3d35f6e38a382640ce124726902"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set up this class with the structure for a given quiz. <br /></td></tr>
+<tr class="separator:a4b0fc3d35f6e38a382640ce124726902"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -1413,6 +1414,38 @@ stdClass[]&#160;</td><td class="memItemRight" valign="bottom"><b>$slotsinorder</
 
 </div>
 </div>
+<a id="ac7c1e2e70fe407e1c71e19726a1a59e3" name="ac7c1e2e70fe407e1c71e19726a1a59e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7c1e2e70fe407e1c71e19726a1a59e3">&#9670;&nbsp;</a></span>get_version_choices_for_slot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">mod_quiz\structure::get_version_choices_for_slot </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>$slotnumber</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the version options to show on the Questions page for a particular question. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">int</td><td class="paramname">$slotnumber</td><td>which slot to get the choices for. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">stdClass[]</td><td>other versions of this question. Each object has fields versionid, version and selected. Array is returned most recent version first. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="abd49e117d3d28fcd368046c80da2e6e6" name="abd49e117d3d28fcd368046c80da2e6e6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abd49e117d3d28fcd368046c80da2e6e6">&#9670;&nbsp;</a></span>has_questions()</h2>
 
@@ -1804,72 +1837,6 @@ stdClass[]&#160;</td><td class="memItemRight" valign="bottom"><b>$slotsinorder</
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">void</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a158a5bd89f19cfffaa44cb0b0ef92102" name="a158a5bd89f19cfffaa44cb0b0ef92102"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a158a5bd89f19cfffaa44cb0b0ef92102">&#9670;&nbsp;</a></span>populate_missing_questions()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">mod_quiz\structure::populate_missing_questions </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$slots</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Used by populate. </p>
-<p >Make up fake data for any missing questions. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramtype">stdClass[]</td><td class="paramname">$slots</td><td>the data about the slots and questions in the quiz. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">stdClass[]</td><td>updated $slots array. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="acf7be78418cfdd4c11f3b5b803f6261c" name="acf7be78418cfdd4c11f3b5b803f6261c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf7be78418cfdd4c11f3b5b803f6261c">&#9670;&nbsp;</a></span>populate_structure()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">mod_quiz\structure::populate_structure </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$quiz</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Set up this class with the structure for a given quiz. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramtype">stdClass</td><td class="paramname">$quiz</td><td>the quiz settings. </td></tr>
   </table>
   </dd>
 </dl>
@@ -2304,7 +2271,7 @@ stdClass[]&#160;</td><td class="memItemRight" valign="bottom"><b>$slotsinorder</
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 10 2022 02:50:39 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+Generated on Sun Apr 17 2022 02:49:28 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>

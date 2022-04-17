@@ -25,7 +25,7 @@
   <td id="projectalign">
    <div id="projectname">Moodle PHP Documentation<span id="projectnumber">&#160;4.0</span>
    </div>
-   <div id="projectbrief">Moodle 4.0rc1 (Build: 20220408) (f62cd448)</div>
+   <div id="projectbrief">Moodle 4.0rc4 (Build: 20220416) (f8011897)</div>
   </td>
  </tr>
  </tbody>
@@ -87,6 +87,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:affd818fee44e68c7f64602c542686d33"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d64/classquiz__default__report.html#affd818fee44e68c7f64602c542686d33">get_current_group</a> ($cm, $course, $<a class="el" href="../../da/d04/classcontext.html">context</a>)</td></tr>
 <tr class="memdesc:affd818fee44e68c7f64602c542686d33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the current group for the user user looking at the report.  <a href="../../d5/d64/classquiz__default__report.html#affd818fee44e68c7f64602c542686d33">More...</a><br /></td></tr>
 <tr class="separator:affd818fee44e68c7f64602c542686d33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3c0d17796969e1386bfca9d35fcad08"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dcf/classquiz__attempts__report.html#ad3c0d17796969e1386bfca9d35fcad08">init</a> ($mode, $formclass, $<a class="el" href="../../dc/d8f/classquiz.html">quiz</a>, $cm, $course)</td></tr>
+<tr class="memdesc:ad3c0d17796969e1386bfca9d35fcad08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise various aspects of this report.  <a href="../../d0/dcf/classquiz__attempts__report.html#ad3c0d17796969e1386bfca9d35fcad08">More...</a><br /></td></tr>
+<tr class="separator:ad3c0d17796969e1386bfca9d35fcad08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a403b524581fd894e5789a63a5923e512"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d5/d64/classquiz__default__report.html#a403b524581fd894e5789a63a5923e512">print_header_and_tabs</a> ($cm, $course, $<a class="el" href="../../dc/d8f/classquiz.html">quiz</a>, $reportmode='overview')</td></tr>
 <tr class="memdesc:a403b524581fd894e5789a63a5923e512"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise some parts of $PAGE and start output.  <a href="../../d5/d64/classquiz__default__report.html#a403b524581fd894e5789a63a5923e512">More...</a><br /></td></tr>
 <tr class="separator:a403b524581fd894e5789a63a5923e512"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,9 +143,6 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:aa1290dcb1dd14e0b278084cd160f3698"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dcf/classquiz__attempts__report.html#aa1290dcb1dd14e0b278084cd160f3698">get_students_joins</a> ($cm, $course=null)</td></tr>
 <tr class="memdesc:aa1290dcb1dd14e0b278084cd160f3698"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get sql fragments (joins) which can be used to build queries that will select an appropriate set of students to show in the reports.  <a href="../../d0/dcf/classquiz__attempts__report.html#aa1290dcb1dd14e0b278084cd160f3698">More...</a><br /></td></tr>
 <tr class="separator:aa1290dcb1dd14e0b278084cd160f3698"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3c0d17796969e1386bfca9d35fcad08"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dcf/classquiz__attempts__report.html#ad3c0d17796969e1386bfca9d35fcad08">init</a> ($mode, $formclass, $<a class="el" href="../../dc/d8f/classquiz.html">quiz</a>, $cm, $course)</td></tr>
-<tr class="memdesc:ad3c0d17796969e1386bfca9d35fcad08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise various aspects of this report.  <a href="../../d0/dcf/classquiz__attempts__report.html#ad3c0d17796969e1386bfca9d35fcad08">More...</a><br /></td></tr>
-<tr class="separator:ad3c0d17796969e1386bfca9d35fcad08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a90b9f697ea160e66e4f51a80a239bd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/dcf/classquiz__attempts__report.html#a1a90b9f697ea160e66e4f51a80a239bd">load_relevant_students</a> ($cm, $course=null)</td></tr>
 <tr class="memdesc:a1a90b9f697ea160e66e4f51a80a239bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information about which students to show in the report.  <a href="../../d0/dcf/classquiz__attempts__report.html#a1a90b9f697ea160e66e4f51a80a239bd">More...</a><br /></td></tr>
 <tr class="separator:a1a90b9f697ea160e66e4f51a80a239bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -714,7 +714,7 @@ boolean&#160;</td><td class="memItemRight" valign="bottom"><b>$showgrades</b> = 
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">inherited</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inherited</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1087,7 +1087,7 @@ boolean&#160;</td><td class="memItemRight" valign="bottom"><b>$showgrades</b> = 
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 10 2022 02:49:16 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+Generated on Sun Apr 17 2022 02:48:16 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>
