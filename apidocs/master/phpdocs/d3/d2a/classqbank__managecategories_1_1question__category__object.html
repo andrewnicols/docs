@@ -25,7 +25,7 @@
   <td id="projectalign">
    <div id="projectname">Moodle PHP Documentation<span id="projectnumber">&#160;4.1</span>
    </div>
-   <div id="projectbrief">Moodle 4.1dev (Build: 20220423) (998c632b)</div>
+   <div id="projectbrief">Moodle 4.1dev (Build: 20220429) (1a744030)</div>
   </td>
  </tr>
  </tbody>
@@ -95,6 +95,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a783805e50e61267f3ce51e83a393c622"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d2a/classqbank__managecategories_1_1question__category__object.html#a783805e50e61267f3ce51e83a393c622">get_question_categories</a> (int $parent=null, string $sort=&quot;sortorder ASC&quot;)</td></tr>
 <tr class="memdesc:a783805e50e61267f3ce51e83a393c622"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets question categories.  <a href="../../d3/d2a/classqbank__managecategories_1_1question__category__object.html#a783805e50e61267f3ce51e83a393c622">More...</a><br /></td></tr>
 <tr class="separator:a783805e50e61267f3ce51e83a393c622"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a806873a5f9b17d9dcd204b1c213af62b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d2a/classqbank__managecategories_1_1question__category__object.html#a806873a5f9b17d9dcd204b1c213af62b">get_real_question_ids_in_category</a> (int $categoryid)</td></tr>
+<tr class="memdesc:a806873a5f9b17d9dcd204b1c213af62b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns ids of the question in the given question category.  <a href="../../d3/d2a/classqbank__managecategories_1_1question__category__object.html#a806873a5f9b17d9dcd204b1c213af62b">More...</a><br /></td></tr>
+<tr class="separator:a806873a5f9b17d9dcd204b1c213af62b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aedcca6c57e4934c380c51fc6171baa75"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d3/d2a/classqbank__managecategories_1_1question__category__object.html#aedcca6c57e4934c380c51fc6171baa75">initialize</a> ($page, $contexts, $currentcat, $defaultcategory, $todelete, $addcontexts)</td></tr>
 <tr class="memdesc:aedcca6c57e4934c380c51fc6171baa75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes this classes general category-related variables.  <a href="../../d3/d2a/classqbank__managecategories_1_1question__category__object.html#aedcca6c57e4934c380c51fc6171baa75">More...</a><br /></td></tr>
 <tr class="separator:aedcca6c57e4934c380c51fc6171baa75"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -466,6 +469,39 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>$tabsize</b> = 3</td><
 
 </div>
 </div>
+<a id="a806873a5f9b17d9dcd204b1c213af62b" name="a806873a5f9b17d9dcd204b1c213af62b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a806873a5f9b17d9dcd204b1c213af62b">&#9670;&nbsp;</a></span>get_real_question_ids_in_category()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">qbank_managecategories\question_category_object::get_real_question_ids_in_category </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>$categoryid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns ids of the question in the given question category. </p>
+<p >This method only returns the real question. It does not include subquestions of question types like multianswer.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">int</td><td class="paramname">$categoryid</td><td>id of the category. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">int[]</td><td>array of question ids. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="aedcca6c57e4934c380c51fc6171baa75" name="aedcca6c57e4934c380c51fc6171baa75"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aedcca6c57e4934c380c51fc6171baa75">&#9670;&nbsp;</a></span>initialize()</h2>
 
@@ -748,7 +784,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>$tabsize</b> = 3</td><
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 24 2022 02:47:33 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+Generated on Sun May 1 2022 03:30:45 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>
