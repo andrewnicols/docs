@@ -25,7 +25,7 @@
   <td id="projectalign">
    <div id="projectname">Moodle PHP Documentation<span id="projectnumber">&#160;4.1</span>
    </div>
-   <div id="projectbrief">Moodle 4.1dev (Build: 20220429) (1a744030)</div>
+   <div id="projectbrief">Moodle 4.1dev (Build: 20220506) (941a2992)</div>
   </td>
  </tr>
  </tbody>
@@ -165,9 +165,23 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:ad145b0d6096f85314e2c5cf62315a43b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4b/classtool__uploadcourse__course.html#ad145b0d6096f85314e2c5cf62315a43b">validate_enrolment_data</a> (int $courseid, array $enrolmentdata)</td></tr>
 <tr class="memdesc:ad145b0d6096f85314e2c5cf62315a43b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate passed enrolment data against an existing course.  <a href="../../d7/d4b/classtool__uploadcourse__course.html#ad145b0d6096f85314e2c5cf62315a43b">More...</a><br /></td></tr>
 <tr class="separator:ad145b0d6096f85314e2c5cf62315a43b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d3e5dd7b37aac21b5bb1d8e3c3eaa5e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4b/classtool__uploadcourse__course.html#a7d3e5dd7b37aac21b5bb1d8e3c3eaa5e">validate_role_context</a> (int $courseid, string $role)</td></tr>
+<tr class="memdesc:a7d3e5dd7b37aac21b5bb1d8e3c3eaa5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if role is allowed in course context.  <a href="../../d7/d4b/classtool__uploadcourse__course.html#a7d3e5dd7b37aac21b5bb1d8e3c3eaa5e">More...</a><br /></td></tr>
+<tr class="separator:a7d3e5dd7b37aac21b5bb1d8e3c3eaa5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0deaa92bc3e59dbbb62318681cd10068"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d4b/classtool__uploadcourse__course.html#a0deaa92bc3e59dbbb62318681cd10068">validate_role_context_level</a> (int $roleid)</td></tr>
+<tr class="memdesc:a0deaa92bc3e59dbbb62318681cd10068"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if role is allowed at this context level.  <a href="../../d7/d4b/classtool__uploadcourse__course.html#a0deaa92bc3e59dbbb62318681cd10068">More...</a><br /></td></tr>
+<tr class="separator:a0deaa92bc3e59dbbb62318681cd10068"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
+<tr class="memitem:a75a0cb1c22573cfa5eb992665831e9ab"><td class="memItemLeft" align="right" valign="top"><a id="a75a0cb1c22573cfa5eb992665831e9ab" name="a75a0cb1c22573cfa5eb992665831e9ab"></a>
+array&#160;</td><td class="memItemRight" valign="bottom"><b>$assignableroles</b> = []</td></tr>
+<tr class="memdesc:a75a0cb1c22573cfa5eb992665831e9ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">assignable roles. <br /></td></tr>
+<tr class="separator:a75a0cb1c22573cfa5eb992665831e9ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e8d381c72a69773e2742fd8e3a0ac22"><td class="memItemLeft" align="right" valign="top"><a id="a5e8d381c72a69773e2742fd8e3a0ac22" name="a5e8d381c72a69773e2742fd8e3a0ac22"></a>
+array&#160;</td><td class="memItemRight" valign="bottom"><b>$contextlevels</b> = []</td></tr>
+<tr class="memdesc:a5e8d381c72a69773e2742fd8e3a0ac22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Roles context levels. <br /></td></tr>
+<tr class="separator:a5e8d381c72a69773e2742fd8e3a0ac22"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab63b29be36b8718e5b3b1b496c678649"><td class="memItemLeft" align="right" valign="top"><a id="ab63b29be36b8718e5b3b1b496c678649" name="ab63b29be36b8718e5b3b1b496c678649"></a>
 array&#160;</td><td class="memItemRight" valign="bottom"><b>$data</b> = array()</td></tr>
 <tr class="memdesc:ab63b29be36b8718e5b3b1b496c678649"><td class="mdescLeft">&#160;</td><td class="mdescRight">final import data. <br /></td></tr>
@@ -1134,6 +1148,97 @@ static array&#160;</td><td class="memItemRight" valign="bottom"><b>$mandatoryfie
 
 </div>
 </div>
+<a id="a7d3e5dd7b37aac21b5bb1d8e3c3eaa5e" name="a7d3e5dd7b37aac21b5bb1d8e3c3eaa5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d3e5dd7b37aac21b5bb1d8e3c3eaa5e">&#9670;&nbsp;</a></span>validate_role_context()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tool_uploadcourse_course::validate_role_context </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>$courseid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>$role</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if role is allowed in course context. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">int</td><td class="paramname">$courseid</td><td>course context. </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$role</td><td>Role. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">bool</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a0deaa92bc3e59dbbb62318681cd10068" name="a0deaa92bc3e59dbbb62318681cd10068"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0deaa92bc3e59dbbb62318681cd10068">&#9670;&nbsp;</a></span>validate_role_context_level()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">tool_uploadcourse_course::validate_role_context_level </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>$roleid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if role is allowed at this context level. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">int</td><td class="paramname">$roleid</td><td>Role ID. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">bool</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
 <a id="a66cd3722fb968c9309a1f65e906a9999" name="a66cd3722fb968c9309a1f65e906a9999"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a66cd3722fb968c9309a1f65e906a9999">&#9670;&nbsp;</a></span>$importoptionsdefaults</h2>
@@ -1270,7 +1375,7 @@ static array&#160;</td><td class="memItemRight" valign="bottom"><b>$mandatoryfie
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 1 2022 03:29:06 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+Generated on Sun May 8 2022 03:06:35 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>

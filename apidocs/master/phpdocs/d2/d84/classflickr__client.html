@@ -25,7 +25,7 @@
   <td id="projectalign">
    <div id="projectname">Moodle PHP Documentation<span id="projectnumber">&#160;4.1</span>
    </div>
-   <div id="projectbrief">Moodle 4.1dev (Build: 20220429) (1a744030)</div>
+   <div id="projectbrief">Moodle 4.1dev (Build: 20220506) (941a2992)</div>
   </td>
  </tr>
  </tbody>
@@ -55,6 +55,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="../../d8/dee/classflickr__client-members.html">List of all members</a>  </div>
@@ -151,6 +152,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa95b4abde3fc9eb6e97ec5d46c000444"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d84/classflickr__client.html#aa95b4abde3fc9eb6e97ec5d46c000444">upload</a> (<a class="el" href="../../d0/d00/classstored__file.html">stored_file</a> $photo, array $meta=[])</td></tr>
 <tr class="memdesc:aa95b4abde3fc9eb6e97ec5d46c000444"><td class="mdescLeft">&#160;</td><td class="mdescRight">Upload a photo from Moodle file pool to Flickr.  <a href="../../d2/d84/classflickr__client.html#aa95b4abde3fc9eb6e97ec5d46c000444">More...</a><br /></td></tr>
 <tr class="separator:aa95b4abde3fc9eb6e97ec5d46c000444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a2db76b922a2e22e56857226f3d897eb0"><td class="memItemLeft" align="right" valign="top">static&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d84/classflickr__client.html#a2db76b922a2e22e56857226f3d897eb0">user_agent</a> ()</td></tr>
+<tr class="memdesc:a2db76b922a2e22e56857226f3d897eb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return User-Agent string suitable for calls to Flickr endpoint, avoiding problems caused by the string returned by the {.  <a href="../../d2/d84/classflickr__client.html#a2db76b922a2e22e56857226f3d897eb0">More...</a><br /></td></tr>
+<tr class="separator:a2db76b922a2e22e56857226f3d897eb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -911,13 +918,47 @@ string&#160;</td><td class="memItemRight" valign="bottom"><b>$request_token_api<
 
 </div>
 </div>
+<a id="a2db76b922a2e22e56857226f3d897eb0" name="a2db76b922a2e22e56857226f3d897eb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2db76b922a2e22e56857226f3d897eb0">&#9670;&nbsp;</a></span>user_agent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static flickr_client::user_agent </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return User-Agent string suitable for calls to Flickr endpoint, avoiding problems caused by the string returned by the {. </p>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="../../d8/d3e/classcore__useragent.html#af7af2adddadd288e037df77619b1c116" title="Get the MoodleBot UserAgent for this site.">core_useragent::get_moodlebot_useragent</a>} helper, which is often rejected due to presence of "Bot" within</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">string</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>lib/flickrclient.php</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 1 2022 03:28:26 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+Generated on Sun May 8 2022 03:06:02 for Moodle PHP Documentation by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
 </small></address>
 </body>
 </html>
